@@ -1,0 +1,24 @@
+This file will give instructions on how to add your stuff onto the Template page.
+and the About page.
+
+1) You will first upload your picture to the images folder within src. (Preferably a square image)
+
+2) Copy and Paste Template.js and rename it to YourName.js
+
+3) Open your newly named file and change the function name to YourName(). Do the same with the last line export default YourName;
+
+4) Follow the comments to add all of your information into the page and save the page
+
+5) Open App.js within the src folder and add a path to your page. You will use 
+   <Route path="/yourname" element{<YourName />} />
+
+6) Once that is done, make your way to the About.html page and choose a cell to add your stuff to
+
+7) Replace Name and Role with Your Name and Your Role and change the Link path to "/yourname" and change the image file to your chosen image
+
+8) That should be everything completed. If any visual bugs or style errors, save all of your information on the html files and @ me on discord
+   and I will help you from there.
+
+- Jovanny Ramos | Front End Lead
+
+

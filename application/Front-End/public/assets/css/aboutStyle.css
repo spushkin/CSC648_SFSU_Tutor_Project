@@ -5,7 +5,7 @@
             outline: none;
         }
 
-        .inter {
+        .interFont {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-weight: 900;
         }
@@ -39,13 +39,16 @@
             margin-right: auto;
             padding: 150px 10px;
             background-color: black;
+            width: 300px;
+            height: 300px;
         }
 
         #outer-container {
             background-color: darkgrey;
             width: 100%;
-            height: 80%;
+            height: 400px;
             padding-top: 1%;
+            padding-bottom: 1%;
         }
 
         #table-info{
@@ -59,13 +62,29 @@
             height: 100%;
         }
 
-        #name {
+        #innerTableStyle {
             float: left;
             padding-left: 5%;
             padding-right: 5%;
         }
 
+        .goBackStyle {
+            width: 10%;
+        }
 
+        .goBackStyle > h2 {
+            text-align: center;
+        }
+
+        .teamPhotoPage {
+            height: 370px;
+            width: 370px;
+        }
+
+        .aboutPhotoPage {
+            height: 300px;
+            width: 300px;
+        }
 
      
 
