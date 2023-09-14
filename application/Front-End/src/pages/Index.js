@@ -6,7 +6,7 @@ function Index() {
         <Fragment>
             <NavMenu /> 
             <div>
-                <p>Home Page goes here, Go to About page</p> 
+                <p style={{textAlign: 'center'}}>Home Page goes here, Go to About page</p> 
             </div>
         </Fragment>
     )
