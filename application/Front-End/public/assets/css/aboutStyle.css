@@ -1,0 +1,93 @@
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        .interFont {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 900;
+        }
+
+        .bar {
+            margin-left: auto;
+            margin-right: auto;
+            height: 2px;
+            width: 200px;
+            background-color: #000000;   
+        }
+
+        .photo-grid {
+            display: grid;
+            height: 100%;
+            align-content: space-evenly;
+            grid-template-columns: auto auto auto;
+            column-gap: 10%;
+            row-gap: 8%;
+            padding: 60px 200px 0px;
+        }
+
+        .photo-grid > div {
+            text-align: center;
+            padding: 0px  0px;
+            font-size: 30px;
+        }
+
+        .member-photo {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 150px 10px;
+            background-color: black;
+            width: 300px;
+            height: 300px;
+        }
+
+        #outer-container {
+            background-color: darkgrey;
+            width: 100%;
+            height: 400px;
+            padding-top: 1%;
+            padding-bottom: 1%;
+        }
+
+        #table-info{
+            width: 100%;
+            height: 100%;
+        }
+
+        #photo {
+            background-color: black;
+            width: 100%;
+            height: 100%;
+        }
+
+        #innerTableStyle {
+            float: left;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .goBackStyle {
+            width: 10%;
+        }
+
+        .goBackStyle > h2 {
+            text-align: center;
+        }
+
+        .teamPhotoPage {
+            height: 370px;
+            width: 370px;
+        }
+
+        .aboutPhotoPage {
+            height: 300px;
+            width: 300px;
+        }
+
+     
+
+        
+
+
