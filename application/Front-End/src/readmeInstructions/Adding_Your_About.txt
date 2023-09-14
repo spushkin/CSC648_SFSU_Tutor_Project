@@ -1,6 +1,9 @@
 This file will give instructions on how to add your stuff onto the Template page.
 and the About page.
 
+Make sure you are inside the Front-End folder before you run 'npm install' to retrieve the node_modules folder.
+Then when you have the folder, run 'npm start' to run the server. 
+
 1) You will first upload your picture to the images folder within src. (Preferably a square image)
 
 2) Copy and Paste Template.js and rename it to YourName.js
