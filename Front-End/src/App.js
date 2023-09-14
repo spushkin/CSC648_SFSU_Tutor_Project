@@ -1,3 +1,4 @@
+import logo from './logo.svg';
 import './App.css';
 import Index from './pages/Index';
 import About from './pages/About';
@@ -9,11 +10,11 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path='/' element={<Index />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/template' element={<Template />} />
-        </Routes>
-      </Router>
+          <Route path="/" element={<Index />} />  
+          <Route path="/about" element={<About />} />
+          <Route path="/template" element={<Template />} />
+         </Routes>
+        </Router>
     </div>
   );
 }
