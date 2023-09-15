@@ -41,9 +41,9 @@ function About() {
                         <Link to="/siarheipushkin"><h5 className="center">Documentation</h5></Link>
                     </div>
                     <div className="team-member">
-                        <Link to="/template"><img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="aboutPhotoPage" /></Link>
-                        <Link to="/template"><h4 className="center">Name</h4></Link>
-                        <Link to="/template"><h5 className="center">role</h5></Link>
+                        <Link to="/EsauBMedina"><img src={require('../images/Profile_Esau.jpg')} alt="Esau B. Medina" className="aboutPhotoPage" /></Link>
+                        <Link to="/EsauBMedina"><h4 className="center">Esau B. Medina</h4></Link>
+                        <Link to="/EsauBMedina"><h5 className="center">Documentation</h5></Link>
                     </div>
                 </div>
             </div>
