@@ -3,7 +3,7 @@ import NavMenu from './NavMenu';
 import { Link } from 'react-router-dom';
 
 function About() {
-    return(
+    return (
         <Fragment>
             <NavMenu />
             <div>
@@ -26,9 +26,9 @@ function About() {
                         <Link to="/jovannyramos"><h5 className="center">Front End Lead</h5></Link>
                     </div>
                     <div className="team-member">
-                        <Link to="/template"><img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="aboutPhotoPage" /></Link>
-                        <Link to="/template"><h4 className="center">Name</h4></Link>
-                        <Link to="/template"><h5 className="center">role</h5></Link>
+                        <Link to="/williamambriz"><img src={require('../images/William.jpeg')} alt="William Ambriz" className="aboutPhotoPage" /></Link>
+                        <Link to="/williamambriz"><h4 className="center">William Ambriz</h4></Link>
+                        <Link to="/williamambriz"><h5 className="center">GitHub Master</h5></Link>
                     </div>
                     <div className="team-member">
                         <Link to="/template"><img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="aboutPhotoPage" /></Link>
