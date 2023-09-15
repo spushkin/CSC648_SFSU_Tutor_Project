@@ -26,14 +26,14 @@ function About() {
                         <Link to="/jovannyramos"><h5 className="center">Front End Lead</h5></Link>
                     </div>
                     <div className="team-member">
-                        <Link to="/akshargothi"><img src={require('../images/Akshar.jpg')} alt="Akshar Gothi" className="aboutPhotoPage" /></Link>
-                        <Link to="/akshargothi"><h4 className="center">Akshar Gothi</h4></Link>
-                        <Link to="/akshargothi"><h5 className="center">Back End Lead</h5></Link>
-                    </div>
-                    <div className="team-member">
                         <Link to="/template"><img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="aboutPhotoPage" /></Link>
                         <Link to="/template"><h4 className="center">Name</h4></Link>
                         <Link to="/template"><h5 className="center">role</h5></Link>
+                    </div>
+                    <div className="team-member">
+                        <Link to="/akshargothi"><img src={require('../images/Akshar.jpg')} alt="Akshar Gothi" className="aboutPhotoPage" /></Link>
+                        <Link to="/akshargothi"><h4 className="center">Akshar Gothi</h4></Link>
+                        <Link to="/akshargothi"><h5 className="center">Back End Lead</h5></Link>
                     </div>
                     <div className="team-member">
                         <Link to="/template"><img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="aboutPhotoPage" /></Link>
