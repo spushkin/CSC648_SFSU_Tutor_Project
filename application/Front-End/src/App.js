@@ -1,3 +1,4 @@
+
 import logo from "./logo.svg";
 import "./App.css";
 import Index from "./pages/Index";
@@ -9,6 +10,7 @@ import SiarheiPushkin from "./pages/SiarheiPushkin";
 import DaivikPurani from "./pages/DaivikPurani";
 import EsauBMedina from './pages/EsauBMedina';
 import WilliamAmbriz from './pages/WilliamAmbriz';
+import AksharGothi from './pages/AksharGothi';
 
 
 function App() {
@@ -22,12 +24,15 @@ function App() {
           <Route path="/jovannyramos" element={<JovannyRamos />} />
 
 
+
           <Route path="/siarheipushkin" element={<SiarheiPushkin />} />
           <Route path="/daivikpurani" element={<DaivikPurani />} />
           <Route path="/EsauBMedina" element={<EsauBMedina />} />
           <Route path="/williamambriz" element={<WilliamAmbriz />} />
+           <Route path="/akshargothi" element={<AksharGothi />} />
         </Routes>
       </Router>
+
 
     </div>
   );
