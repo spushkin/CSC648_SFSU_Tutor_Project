@@ -5,6 +5,7 @@ import About from './pages/About';
 import Template from './pages/Template';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import JovannyRamos from './pages/JovannyRamos';
+import EsauBMedina from './pages/EsauBMedina';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/template" element={<Template />} />
           <Route path="/jovannyramos" element={<JovannyRamos />} />
+          <Route path="/EsauBMedina" element={<EsauBMedina />} />
          </Routes>
         </Router>
     </div>
