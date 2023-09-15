@@ -19,10 +19,12 @@ function App() {
           <Route path="/template" element={<Template />} />
           <Route path="/jovannyramos" element={<JovannyRamos />} />
 
+
           <Route path="/siarheipushkin" element={<SiarheiPushkin />} />
           <Route path="/daivikpurani" element={<DaivikPurani />} />
         </Routes>
       </Router>
+
 
     </div>
   );

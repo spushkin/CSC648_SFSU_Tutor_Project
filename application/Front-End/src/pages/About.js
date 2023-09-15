@@ -36,9 +36,9 @@ function About() {
                         <Link to="/template"><h5 className="center">role</h5></Link>
                     </div>
                     <div className="team-member">
-                        <Link to="/template"><img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="aboutPhotoPage" /></Link>
-                        <Link to="/template"><h4 className="center">Name</h4></Link>
-                        <Link to="/template"><h5 className="center">role</h5></Link>
+                        <Link to="/siarheipushkin"><img src={require('../images/Profile_Siarhei.jpg')} alt="Siarhei Pushkin" className="aboutPhotoPage" /></Link>
+                        <Link to="/siarheipushkin"><h4 className="center">Siarhei Pushkin</h4></Link>
+                        <Link to="/siarheipushkin"><h5 className="center">Documentation</h5></Link>
                     </div>
                     <div className="team-member">
                         <Link to="/template"><img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="aboutPhotoPage" /></Link>
