@@ -3,7 +3,7 @@ import NavMenu from './NavMenu';
 import { Link } from 'react-router-dom';
 
 function About() {
-    return(
+    return (
         <Fragment>
             <NavMenu />
             <div>
@@ -16,9 +16,9 @@ function About() {
 
                 <div className="photo-grid">
                     <div className="team-member">
-                        <Link to="/template"><img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="aboutPhotoPage" /></Link>
-                        <Link to="/template"><h4 className="center">Name</h4></Link>
-                        <Link to="/template"><h5 className="center">role</h5></Link>
+                        <Link to="/daivikpurani"><img src={require('../images/Profile_Daivik.jpeg')} alt="DaivikPurani" className="aboutPhotoPage" /></Link>
+                        <Link to="/daivikpurani"><h4 className="center">Daivik Purani</h4></Link>
+                        <Link to="/daivikpurani"><h5 className="center">Team Lead</h5></Link>
                     </div>
                     <div className="team-member">
                         <Link to="/jovannyramos"><img src={require('../images/Profile_Jovanny.png')} alt="Jovanny Ramos" className="aboutPhotoPage" /></Link>
@@ -26,24 +26,24 @@ function About() {
                         <Link to="/jovannyramos"><h5 className="center">Front End Lead</h5></Link>
                     </div>
                     <div className="team-member">
-                        <Link to="/template"><img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="aboutPhotoPage" /></Link>
-                        <Link to="/template"><h4 className="center">Name</h4></Link>
-                        <Link to="/template"><h5 className="center">role</h5></Link>
+                        <Link to="/williamambriz"><img src={require('../images/William.jpeg')} alt="William Ambriz" className="aboutPhotoPage" /></Link>
+                        <Link to="/williamambriz"><h4 className="center">William Ambriz</h4></Link>
+                        <Link to="/williamambriz"><h5 className="center">GitHub Master</h5></Link>
                     </div>
                     <div className="team-member">
-                        <Link to="/template"><img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="aboutPhotoPage" /></Link>
-                        <Link to="/template"><h4 className="center">Name</h4></Link>
-                        <Link to="/template"><h5 className="center">role</h5></Link>
+                        <Link to="/akshargothi"><img src={require('../images/Akshar.jpg')} alt="Akshar Gothi" className="aboutPhotoPage" /></Link>
+                        <Link to="/akshargothi"><h4 className="center">Akshar Gothi</h4></Link>
+                        <Link to="/akshargothi"><h5 className="center">Back End Lead</h5></Link>
                     </div>
                     <div className="team-member">
-                        <Link to="/template"><img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="aboutPhotoPage" /></Link>
-                        <Link to="/template"><h4 className="center">Name</h4></Link>
-                        <Link to="/template"><h5 className="center">role</h5></Link>
+                        <Link to="/siarheipushkin"><img src={require('../images/Profile_Siarhei.jpg')} alt="Siarhei Pushkin" className="aboutPhotoPage" /></Link>
+                        <Link to="/siarheipushkin"><h4 className="center">Siarhei Pushkin</h4></Link>
+                        <Link to="/siarheipushkin"><h5 className="center">Documentation</h5></Link>
                     </div>
                     <div className="team-member">
-                        <Link to="/template"><img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="aboutPhotoPage" /></Link>
-                        <Link to="/template"><h4 className="center">Name</h4></Link>
-                        <Link to="/template"><h5 className="center">role</h5></Link>
+                        <Link to="/EsauBMedina"><img src={require('../images/Profile_Esau.jpg')} alt="Esau B. Medina" className="aboutPhotoPage" /></Link>
+                        <Link to="/EsauBMedina"><h4 className="center">Esau B. Medina</h4></Link>
+                        <Link to="/EsauBMedina"><h5 className="center">Documentation</h5></Link>
                     </div>
                 </div>
             </div>
