@@ -18,6 +18,43 @@
 7. Database name (basically the name that contains all your tables)
 8. Instructions on how to use the above information.
 
+Credentials:
+
+Account email: agothi@sfsu.edu
+
+Region: us-west-1b
+
+EC2:
+
+url:- 3.101.225.46:3000
+Platform: ubuntu
+Platform details: Linux/UNIX
+Instance type: t2.micro{
+Family: t2
+1 vCPU
+1 GiB Memory
+Free tier eligible
+}
+Volume: 8 GiB, EBS, General Purpose SSD (gp2)
+SSH link: ssh -i "tutoringsite.pem" ubuntu@ec2-3-101-225-46.us-west-1.compute.amazonaws.com
+
+RDBMS:
+
+Hostname: se-tutoringsite.cmacnvx5bdls.us-west-1.rds.amazonaws.com
+Port: 3306
+username: admin
+Class: db.t2.micro
+Engine: MySQL Community
+DB name: se-tutoringsite
+Storage: 20GiB
+Engine version: 8.0.33
+
+Steps to connect AWS EC2 instance from local machine:
+1. Open terminal/cmd in your local machine
+2. Go to the folder where tutoring.pem file is located
+3. Enter the SSH link into terminal/cmd.
+4. Then after you will access the aws ec2 ubuntu terminal.
+
 # Most important things to Remember
 ## These values need to kept update to date throughout the semester. <br>
 ## <strong>Failure to do so will result it points be deducted from milestone submissions.</strong><br>

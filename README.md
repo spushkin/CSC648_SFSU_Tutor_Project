@@ -22,36 +22,4 @@
 |    Documentation     | Siarhei Pushkin      |     spushkin@sfsu.edu          |     spushkin            |
 |    Back-End Lead     | Akshar Gothi      |   agothi@sfsu.edu            |        akshar27         |
 
-Credentials:
-
-Account email: agothi@sfsu.edu
-
-Region: us-west-1b
-
-EC2:
-
-url:- 3.101.225.46:3000
-Platform: ubuntu
-Platform details: Linux/UNIX
-Instance type: t2.micro{
-Family: t2
-1 vCPU
-1 GiB Memory
-Free tier eligible
-}
-Volume: 8 GiB, EBS, General Purpose SSD (gp2)
-SSH link: ssh -i "tutoringsite.pem" ubuntu@ec2-3-101-225-46.us-west-1.compute.amazonaws.com
-
-RDBMS:
-
-Hostname: se-tutoringsite.cmacnvx5bdls.us-west-1.rds.amazonaws.com
-Port: 3306
-username: admin
-Password: Tutoringsitecsc648
-Class: db.t2.micro
-Engine: MySQL Community
-DB name: se-tutoringsite
-Storage: 20GiB
-Engine version: 8.0.33
-
 ## NO code needs to be stored in the root of your repository. You may rename the application folder if you like to your team's application name. But all source code related to your team's application should be stored inside the application folder.
