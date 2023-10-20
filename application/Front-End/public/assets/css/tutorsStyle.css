@@ -27,11 +27,6 @@ footer {
 	background-color: lightblue;
 }
 
-.logo {
-	padding-top: 20px;
-	float: left;
-	padding-left: 40px;
-}
 
 header {
 	list-style: none;
@@ -43,84 +38,7 @@ header {
 	margin-top: -70px;
 }
 
-.menu {
-	float: right;
-	padding-top: 8px;
-}
 
-.menu a {
-	transition: all 0.3s ease 0s;
-	display: inline-block;
-	padding: 15px 40px;
-	text-align: center;
-	font-size: 20px;
-	font-style: bold;
-}
-
-header a:hover {
-	color: #cbcbcb;
-}
-
-button {
-	margin-left: 20px;
-	padding: 9px 25px;
-	background-color: rgba(44, 138, 201, 1);
-	border: none;
-	border-radius: 50px;
-	cursor: pointer;
-	transition: all 0.3s ease 0s;
-}
-
-button:hover {
-	background-color: rgba(44, 138, 201, 0.8);
-}
-
-.center {
-	text-align: center;
-}
-
-.searchBoxTutors {
-	width: 100vw;
-	margin-top: 70px;
-}
-
-.titleBox {
-	background-color: orange;
-	padding-top: 3vh;
-}
-
-.bottomTitleBox {
-	background-color: white;
-	padding-top: 3vh;
-	padding-bottom: 3vh;
-	color: grey;
-}
-
-.searchBarTutors {
-	background-color: lightblue;
-	width: 100%;
-	padding-top: 2vh;
-	display: flex;
-}
-
-.centerSearchBarTutors {
-	display: block;
-	margin: auto;
-}
-
-.tempName {
-	border: 2px solid black;
-	display: block;
-	margin: auto;
-	width: 45vh;
-}
-
-.tempName tr {
-	width: 100%;
-}
-.tempName td {
-	border: 2px solid green;
-}
 
 .main-container {
 	width: 100%;
