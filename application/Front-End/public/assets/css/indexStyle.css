@@ -123,7 +123,70 @@ button:hover {
 	border: none;
 }
 
-.tempname {
-	background-color: pink;
-	height: 100vh;
+.RecentlyApplied {
+	background-color: transparent;
+	height: 75vh;
+}
+.libraryPic{
+	margin-top: 50px;
+	height: 62vh;
+	width: 100vw;
+}
+.ContainterForRecents{
+	position: relative;
+	margin-top: -370px;
+	background-color: transparent;
+	border: 1px ;
+	height: 300px;
+	width: 100vw;
+	overflow-x: scroll;
+	white-space: nowrap;
+	&::-webkit-scrollbar {
+		display: none;
+	  }
+	.CardStyle{
+		display: inline-block;
+		background: rgb(228, 228, 228);
+		border-style: solid;
+		border-width: 1px 1px 1px 1px;
+		border-color: white;
+		border-radius: 0.2rem;
+		height: 275px;
+		width: 750px;
+		margin: 10px;
+	}
+	
+}
+.proPic{
+float: left;
+	margin-top: 50px;
+	margin-left: 25px;
+	height: 180px;
+	width: 180px;
+	}
+.cardText{
+	font-size: 20px;
+	padding-left: 20px;
+	padding-top: 40px;
+	float: left;
+}
+.recent{
+	position: absolute;
+	padding-top: 60px;
+	padding-left: 40%;
+	font-size: 50px;
+	text-decoration-line:underline;
+
+}
+.buttonHold{
+	margin-top: 69px;
+	margin-left: 350px;
+}
+.cardbutton{
+	font-size: 13px;
+	position: relative;
+	background-color: rgb(183, 199, 212);
+	margin: 5px 5px 5px 5px;
+	height: 42px;
+	width: 63px;
 }
