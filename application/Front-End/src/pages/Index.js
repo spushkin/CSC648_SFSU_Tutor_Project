@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import NavMenu from './NavMenu';
 import SearchBar from './SearchBar';
+import TutorCard from './TutorCard';
 
 function Index() {
     return (
@@ -22,45 +23,10 @@ function Index() {
                 <h2 className="recent" ><i>Recently Applied</i></h2>
                     <img src={require('../images/sfLibrary.png')} alt="SFSU Library" className="libraryPic" />
                     <div className="ContainterForRecents">
-                        <div  className="CardStyle">
-                        <img src={require('../images/sillouette.jpg')} alt="EMPTY" className="proPic"  />
-                            <div className='cardText'>
-                                <h2 ><i>Full Name</i></h2>
-                                <h3 ><i>Main Subject Proficiency</i></h3>
-                                <i>Summary of Tutors Description</i>
-                                <br></br>
-                                <div className='buttonHold'>   
-                                    <button className='cardbutton'>Contact</button>
-                                    <button className='cardbutton'>View</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div  className="CardStyle">
-                        <img src={require('../images/sillouette.jpg')} alt="EMPTY" className="proPic"  />
-                            <div className='cardText'>
-                                <h2 ><i>Full Name</i></h2>
-                                <h3 ><i>Main Subject Proficiency</i></h3>
-                                <i>Summary of Tutors Description</i>
-                                <br></br>
-                                <div className='buttonHold'>   
-                                    <button className='cardbutton'>Contact</button>
-                                    <button className='cardbutton'>View</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div  className="CardStyle">
-                        <img src={require('../images/sillouette.jpg')} alt="EMPTY" className="proPic"  />
-                            <div className='cardText'>
-                                <h2 ><i>Full Name</i></h2>
-                                <h3 ><i>Main Subject Proficiency</i></h3>
-                                <i>Summary of Tutors Description</i>
-                                <br></br>
-                                <div className='buttonHold'>   
-                                    <button className='cardbutton'>Contact</button>
-                                    <button className='cardbutton'>View</button>
-                                </div>
-                            </div>
-                        </div>
+                        <TutorCard />
+                        <TutorCard />
+                        <TutorCard />
+                        <TutorCard />
                     </div>
                 </div>
             </div>
