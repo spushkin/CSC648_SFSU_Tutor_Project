@@ -14,8 +14,8 @@ function Index() {
                 <div className="searchBar">
                     <table className="tableStyle">
                         <tr>
-                            <td width="15%">
-                                <select name="filters" id="subject">
+                            <td width="15%" className="dropDownBox">
+                                <select name="filters" id="subject" className="dropDownMenu">
                                     <option value="all">All</option>
                                     <option value="math">Math</option>
                                     <option value="physics">Physics</option>
@@ -31,6 +31,8 @@ function Index() {
                 <div className="bottomTitleBox">
                     <h4 className="center"><i>One of the greatest collection of San Francisco State Universtiy experts in 100+ subjects ready to educate you on your time!</i></h4>
                 </div>
+
+                <div className="tempname"></div>
             </div>
         </Fragment>
     )
