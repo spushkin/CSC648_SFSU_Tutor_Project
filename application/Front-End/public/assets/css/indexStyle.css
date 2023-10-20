@@ -52,11 +52,9 @@
 		}
 
 		button {
-			margin-left: 20px;
-			padding: 9px 25px;
+			padding: 3px 5px;
 			background-color: rgba(44, 138, 201, 1);
 			border: none;
-			border-radius: 50px;
 			cursor: pointer;
 			transition: all 0.3s ease 0s;
 		}
@@ -100,17 +98,65 @@
 			margin: auto;
 		}
 
-		.tempName {
+		.tableStyle {
 			border: 2px solid black;
 			display: block;
 			margin: auto;
 			width: 45vh;
 		}
 
-		.tempName tr {
-			width: 100%;
-		}
 		.tempName td {
 			border: 2px solid green;
 
+		}
+
+		.goButton {
+			color: white;
+			padding: auto auto;
+			text-align: center;
+			display: inline-block;
+			margin: 4px 2px;
+			background-color: #c9c9c9;
+		}
+
+		.dropDownFilters {
+			background-color: #c9c9c9;
+			color: white;
+			padding: 16px;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+		}
+
+		.dropDownMenu {
+			position: relative;
+			display: inline-block;
+		}
+		
+		.dropDownContent {
+			display: none;
+			position: absolute;
+			background-color: #f9f9f9;
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+		}
+
+		.dropDownContent a {
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+		}
+
+		.dropDownContent a:hover {
+			background-color: #f1f1f1;
+		}
+
+		.dropDownMenu:hover .dropDownContent {
+			display: block;
+		}
+
+		.dropDownMenu:hover .dropDownFilters {
+			background-color: rgba(44, 138, 201, 0.8), green, blue);
 		}

@@ -12,18 +12,24 @@ function Index() {
                 </div>
 
                 <div className="searchBar">
-                    <table className="tempName">
+                    <table className="tableStyle">
                         <tr>
-                            <td width="15%"><div className="centerSearchBar"><p>Filters</p></div></td>
+                            <td width="15%">
+                                <select name="filters" id="subject">
+                                    <option value="all">All</option>
+                                    <option value="math">Math</option>
+                                    <option value="physics">Physics</option>
+                                    <option value="history">History</option>
+                                </select>
+                            </td>
                             <td width="100%"><input size="37" className="centerSearchBar" type="text" placeholder="Search for class (e.g. CSC-648)" name="search"></input></td>
-                            <td width="15%"><div className="searchButton"><p>></p></div></td>
+                            <td width="15%"><div className="searchButton"><button className="goButton">></button></div></td>
                         </tr>
                     </table>
                 </div>
 
                 <div className="bottomTitleBox">
-                    <h4 className="center"><i>One of the greatest collection of San Francisco State Universtiy experts in 100+</i></h4>
-                    <h4 className="center"><i>subjects ready to educate you on your time!</i></h4>
+                    <h4 className="center"><i>One of the greatest collection of San Francisco State Universtiy experts in 100+ subjects ready to educate you on your time!</i></h4>
                 </div>
             </div>
         </Fragment>
