@@ -66,11 +66,45 @@
 		}
 
         .center {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			text-align: center;
 		}
 
-		/* td {
-			text-align: center;
-		} */
+		.searchBox {
+			background-color: green;
+			height: 40vh;
+			width: 100vw;
+			
+		}	
+
+		.titleBox {
+			background-color: white;
+			padding-top: 5vh;
+
+		}
+
+		.searchBar {
+			background-color: orange;
+			width: 100%;
+			padding-top: 2vh;
+			display: flex;
+		}
+
+		.centerSearchBar {
+			display: block;
+			margin: auto;
+		}
+
+		.tempName {
+			border: 2px solid black;
+			display: block;
+			margin: auto;
+			width: 45vh;
+		}
+
+		.tempName tr {
+			width: 100%;
+		}
+		.tempName td {
+			border: 2px solid green;
+
+		}
