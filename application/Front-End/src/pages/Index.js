@@ -23,7 +23,7 @@ function Index() {
                                 </select>
                             </td>
                             <td width="100%"><input size="37" className="centerSearchBar" type="text" placeholder="Search for class (e.g. CSC-648)" name="search"></input></td>
-                            <td width="15%"><div className="searchButton"><button className="goButton">></button></div></td>
+                            <td width="15%"><div className="searchButton"><button className="goButton">Go</button></div></td>
                         </tr>
                     </table>
                 </div>
