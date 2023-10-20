@@ -70,20 +70,26 @@
 		}
 
 		.searchBox {
-			background-color: green;
+			background-color: yellow;
 			height: 40vh;
 			width: 100vw;
 			
 		}	
 
 		.titleBox {
-			background-color: white;
-			padding-top: 5vh;
+			background-color: orange;
+			padding-top: 3vh;
+		}
 
+		.bottomTitleBox {
+			background-color: white;
+			padding-top: 3vh;
+			padding-bottom: 3vh;
+			color: grey;
 		}
 
 		.searchBar {
-			background-color: orange;
+			background-color: white;
 			width: 100%;
 			padding-top: 2vh;
 			display: flex;

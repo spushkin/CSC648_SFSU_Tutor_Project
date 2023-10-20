@@ -21,9 +21,9 @@ function Index() {
                     </table>
                 </div>
 
-                <div className="titleBox">
-                    <h2 className="center"><i>Best Place to find SFSU tutors</i></h2>
-                    <h2 className="center"><i>for SFSU Students</i></h2>
+                <div className="bottomTitleBox">
+                    <h4 className="center"><i>One of the greatest collection of San Francisco State Universtiy experts in 100+</i></h4>
+                    <h4 className="center"><i>subjects ready to educate you on your time!</i></h4>
                 </div>
             </div>
         </Fragment>
