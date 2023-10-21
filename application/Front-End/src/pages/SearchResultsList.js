@@ -11,10 +11,7 @@ function SearchResultsList({ results }) {
 						return <SearchResults result={result} key={id}/>;
 					})
 				}
-                <div>a</div>
-                <div>b</div>
-                <div>c</div>
-            </div>
+			</div>
 		</Fragment>
 	);
 }
