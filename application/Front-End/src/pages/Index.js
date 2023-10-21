@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import NavMenu from './NavMenu';
 import SearchBar from './SearchBar';
 import TutorCard from './TutorCard';
-
+import SearchResultsList from "./SearchResultsList";
 function Index() {
     const [results, setResults] = useState([]);
 
@@ -17,7 +17,7 @@ function Index() {
 
                 <SearchBar setResults={setResults}/>
                 
-
+              
                 <div className="bottomTitleBox">
                     <h4 className="center"><i>One of the greatest collection of San Francisco State Universtiy experts in 100+ subjects ready to educate you on your time!</i></h4>
                 </div>
@@ -26,10 +26,13 @@ function Index() {
                 <h2 className="recent" ><i>Recently Applied</i></h2>
                     <img src={require('../images/sfLibrary.png')} alt="SFSU Library" className="libraryPic" />
                     <div className="ContainterForRecents">
-                        <TutorCard />
-                        <TutorCard />
-                        <TutorCard />
-                        <TutorCard />
+                        
+                        {/* from: 1 will send results to Tutor card*/}
+                     <SearchResultsList results={results} from={1}/>
+                        <TutorCard/>
+                        <TutorCard/>
+                        <TutorCard/>
+                        <TutorCard/>
                     </div>
                 </div>
             </div>
