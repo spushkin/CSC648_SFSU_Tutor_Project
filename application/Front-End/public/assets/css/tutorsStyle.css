@@ -27,7 +27,6 @@ footer {
 	background-color: lightblue;
 }
 
-
 header {
 	list-style: none;
 	overflow: hidden;
@@ -38,8 +37,6 @@ header {
 	margin-top: -70px;
 }
 
-
-
 .main-container {
 	width: 100%;
 }
@@ -47,8 +44,7 @@ header {
 .flex-container {
 	width: auto;
 	height: auto;
-	text-align: center;
-	border: black 1px solid;
+	text-align: left;
 	margin: 1rem;
 }
 
@@ -60,7 +56,6 @@ header {
 	justify-content: center;
 	flex-wrap: nowrap;
 	align-items: center;
-	border: black 1px solid;
 	background-color: lightgray;
 }
 
@@ -72,10 +67,8 @@ header {
 	align-items: center;
 	flex-direction: row;
 	justify-content: center;
-	border: black 1px solid;
 	margin: 1rem;
 	background-color: white;
 	height: 100%;
 	width: 100%;
-	min-height: 250px;
 }

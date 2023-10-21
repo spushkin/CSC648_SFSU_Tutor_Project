@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Footer() {
 	return (
 		<Fragment>
-			<footer>Footer</footer>
+			<footer>Gators Tutor - 2023</footer>
 		</Fragment>
 	);
 }
