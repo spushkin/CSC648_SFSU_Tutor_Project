@@ -22,7 +22,6 @@ function App() {
 					<Route path="/tutors" element={<Tutors />} />
 					<Route path="/template" element={<Template />} />
 					<Route path="/jovannyramos" element={<JovannyRamos />} />
-
 					<Route path="/siarheipushkin" element={<SiarheiPushkin />} />
 					<Route path="/daivikpurani" element={<DaivikPurani />} />
 					<Route path="/EsauBMedina" element={<EsauBMedina />} />

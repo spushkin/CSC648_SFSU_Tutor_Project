@@ -196,6 +196,7 @@ nav {
 	align-items: center;
 	position: sticky;
 	top: 0;
+	color: red;
 }
 
 nav ul {
@@ -219,10 +220,11 @@ nav ul li a {
 }
 
 nav .navDropMenu {
+	color: rgb(40, 71, 71);
 	display: none;
 	position: absolute;
-	top: 0.75rem;
-	right: 0.5rem;
+	right: 0.1rem;
+	top: -0.8rem;	
 	flex-direction: column;
 	justify-content: space-between;
 	width: 2.25rem;
@@ -260,6 +262,7 @@ nav .navDropMenu span {
 	nav ul li {
 		width: 100%;
 		text-align: center;
+		padding-right: 8vw;
 	}
 
 	nav ul li a {
