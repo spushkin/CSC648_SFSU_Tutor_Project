@@ -13,7 +13,7 @@ function NavMenu() {
 					alignItems: "center",
 					padding: "15px 30px",
 					borderBottom: "1px solid #e0e0e0",
-					backgroundColor: "#e0f7fa",
+					backgroundColor: "#9cf4ff",
 				}}
 			>
 				{/* Title */}
