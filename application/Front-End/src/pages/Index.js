@@ -23,7 +23,7 @@ function Index() {
                 </div>
                 
                 <div className="RecentlyApplied">
-                <h2 className="recent" ><i>Recently Applied</i></h2>
+                <h2 className="recent" ><i>Recently Applied Tutors</i></h2>
                     <img src={require('../images/sfLibrary.png')} alt="SFSU Library" className="libraryPic" />
                     <div className="ContainterForRecents">
                         
