@@ -20,7 +20,7 @@ function TutorCard({result}) {
                 <br></br>
                 <div className='buttonHold'>         
                     <button className='cardbutton'onClick={routeChange}>Contact</button>
-                    <button className='cardbutton'>View</button>
+                    <button className='cardbutton'onClick={routeChange}>View</button>
                 </div>
             </div>
         </div>

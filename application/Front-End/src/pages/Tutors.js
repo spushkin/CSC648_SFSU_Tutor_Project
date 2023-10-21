@@ -19,10 +19,10 @@ function Tutors() {
 			<SearchBar setResults={setResults} />
 
 			{results.length == 0 ? (
-				<h2>No results</h2>
+				<h2>  No results</h2>
 			) : (
 				<h2>
-					Results: {pageStart}-{pageEnd} out of {results.length}
+					 Results: {pageStart}-{pageEnd} out of {results.length}
 				</h2>
 			)}
 
