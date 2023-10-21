@@ -1,9 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import NavMenu from './NavMenu';
 import SearchBar from './SearchBar';
 import TutorCard from './TutorCard';
 
 function Index() {
+    const [results, setResults] = useState([]);
+
     return (
         <Fragment>
             <NavMenu /> 
@@ -13,7 +15,8 @@ function Index() {
                     <h2 className="center"><i>for SFSU Students</i></h2>
                 </div>
 
-                <SearchBar />
+                <SearchBar setResults={setResults}/>
+                
 
                 <div className="bottomTitleBox">
                     <h4 className="center"><i>One of the greatest collection of San Francisco State Universtiy experts in 100+ subjects ready to educate you on your time!</i></h4>
