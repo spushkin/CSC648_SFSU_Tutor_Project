@@ -1,5 +1,5 @@
 const express = require('express');
-
+const cors=require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 8003;
@@ -8,6 +8,10 @@ const port = 8003;
 const indexController = require('./APIs/IndexController');
 
 app.use(express.static('../Public'));
+const options = {
+    origin: '*',
+    }
+app.use(cors(options));
 
 // Define your API routes here
 app.post('/getTutors', bodyParser.json(), async (req, res) => {
@@ -15,6 +19,7 @@ app.post('/getTutors', bodyParser.json(), async (req, res) => {
     const results = await indexController.getTutors(subject, searchText);
     res.send(results);
 });
+
 
 // Start the server
 app.listen(port, () => {
