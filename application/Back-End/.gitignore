@@ -23,6 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 launch.json
+.vscode
+./.vscode/launch.json
+package-lock.json
 
 ../../.vscode/launch.json
 ```
