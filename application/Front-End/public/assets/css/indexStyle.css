@@ -3,6 +3,7 @@
 	margin: 0;
 	padding: 0;
 	outline: none;
+	font-family: "IBM Plex Sans", sans-serif;
 }
 
 a,
@@ -67,43 +68,19 @@ button:hover {
 	margin-right: auto;
 }
 
-.searchBox {
-	height: 40vh;
-	width: 100vw;
-}
-
-.titleBox {
-	padding-top: 3vh;
-}
-
-.bottomTitleBox {
-	background-color: white;
-	padding-top: 3vh;
-	padding-bottom: 3vh;
-	color: grey;
-}
-
 .searchBar {
-	background-color: white;
-	width: 100%;
-	padding-top: 2vh;
+	margin: 1rem;
+	text-align: center;
+	height: max-content;
+}
+
+#searchForm {
 	display: flex;
-	padding-right: 3vw;
-}
-
-.centerSearchBar {
-	display: block;
-	margin: auto;
-	height: 40px;
-}
-
-.tableStyle {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 45vh;
-	table-layout: auto;
-	border-collapse: collapse;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: center;
+	justify-content: center;
+	gap: 0.1rem;
 }
 
 .goButton {
@@ -126,62 +103,59 @@ button:hover {
 .RecentlyApplied {
 	background-color: transparent;
 	height: 75vh;
+	text-align: center;
 }
-.libraryPic{
+
+.libraryPic {
 	margin-top: 50px;
 	height: 62vh;
 	width: 100vw;
 }
-.ContainterForRecents{
-	position: relative;
-	margin-top: -370px;
-	background-color: transparent;
-	border: 1px ;
-	height: 300px;
-	width: 100vw;
-	overflow-x: scroll;
-	white-space: nowrap;
-	&::-webkit-scrollbar {
-		display: none;
-	  }
-	.CardStyle{
-		display: inline-block;
-		background: rgb(228, 228, 228);
-		border-style: solid;
-		border-width: 1px 1px 1px 1px;
-		border-color: white;
-		border-radius: 0.2rem;
-		height: 275px;
-		width: 750px;
-		margin: 10px;
-	}
-	
+
+.CardStyle {
+	background: rgb(228, 228, 228);
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: white;
+	border-radius: 0.2rem;
+	/* margin: 10px; */
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-content: center;
+	width: 100%;
 }
-.proPic{
-float: left;
-	margin-top: 50px;
-	margin-left: 25px;
-	height: 180px;
-	width: 180px;
-	}
-.cardText{
-	font-size: 20px;
-	padding-left: 20px;
-	padding-top: 40px;
-	float: left;
+.proPic {
+	height: auto;
+	width: auto;
+	margin: 0;
+	padding: 0;
 }
-.recent{
-	position: absolute;
-	padding-top: 60px;
-	padding-left: 32%;
-	font-size: 50px;
-	text-decoration-line:underline;
+.cardText {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
 }
-.buttonHold{
-	margin-top: 69px;
-	margin-left: 350px;
+
+.card-right {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: left;
+	padding-left: 1rem;
 }
-.cardbutton{
+
+.recent {
+	font-weight: bolder;
+	color: #000000;
+	margin-top: 2rem;
+	font-style: italic;
+	font-size: xx-large;
+}
+
+.cardbutton {
 	font-size: 13px;
 	position: relative;
 	background-color: rgb(183, 199, 212);
@@ -212,7 +186,7 @@ nav ul li a {
 	text-decoration: none;
 	padding: 0.5rem;
 	margin: 0.5rem;
-	border-radius: 0.5rem; 
+	border-radius: 0.5rem;
 }
 
 .active {
@@ -224,7 +198,7 @@ nav .navDropMenu {
 	display: none;
 	position: absolute;
 	right: 0.1rem;
-	top: -0.8rem;	
+	top: -0.8rem;
 	flex-direction: column;
 	justify-content: space-between;
 	width: 2.25rem;
@@ -268,4 +242,74 @@ nav .navDropMenu span {
 	nav ul li a {
 		margin: 0.2rem 0.5rem;
 	}
+}
+
+.ContainterForRecents {
+	scroll-behavior: smooth;
+	position: relative;
+	margin-top: -370px;
+	background-color: transparent;
+	border: 1px;
+	height: 300px;
+	width: 100vw;
+	overflow-x: scroll;
+	white-space: nowrap;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	display: flex;
+	gap: 3rem;
+	padding-inline: 3rem;
+	/* width: fit-content; */
+	overflow: scroll;
+}
+
+.ContainterForRecents > .CardStyle {
+	display: flex;
+	justify-content: end;
+	background: rgb(228, 228, 228);
+	border-style: solid;
+	border-width: 1px 1px 1px 1px;
+	border-color: white;
+	border-radius: 0.2rem;
+	height: auto;
+	width: 40rem;
+}
+
+.ContainterForRecents .proPic {
+	float: left;
+	margin-top: 50px;
+	margin-left: 25px;
+	height: 180px;
+	width: 180px;
+}
+
+.ContainterForRecents .cardText {
+	padding-left: 20px;
+	padding-top: 40px;
+	float: left;
+}
+.ContainterForRecents .recent {
+	position: absolute;
+	padding-top: 60px;
+	padding-left: 32%;
+	font-size: 50px;
+	text-decoration-line: underline;
+}
+.ContainterForRecents .buttonHold {
+	margin-top: 69px;
+	margin-left: 7rem;
+}
+.ContainterForRecents > .cardbutton {
+	font-size: 13px;
+	position: relative;
+	background-color: rgb(183, 199, 212);
+	margin: 5px 5px 5px 5px;
+	height: 42px;
+	width: 63px;
+}
+
+.ContainterForRecents > * > .card-right,
+.ContainterForRecents > * > .card-left {
+	padding-left: 3rem;
 }
