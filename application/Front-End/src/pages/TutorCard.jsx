@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Template from "./Template";
 function TutorCard({ result }) {
@@ -8,6 +8,7 @@ function TutorCard({ result }) {
 		let path = `/template`;
 		navigate(path);
 	};
+
 	//This is allowing for place holder cards in Index.js.
 	if (result == null) {
 		return (
@@ -15,7 +16,7 @@ function TutorCard({ result }) {
 				<div className="CardStyle">
 					<div className="card-left">
 						<img
-							src={require("../images/sillouette.jpg")}
+							src={require("../images/sillouette.jpg")} 
 							alt="EMPTY"
 							className="proPic"
 						/>
@@ -46,23 +47,26 @@ function TutorCard({ result }) {
 	}
 
 	// Used when We have search results in Index.js
+
+	const tutorsRoute = "https://3.101.225.46:8003/TutorImages/"
+
 	return (
 		<Fragment>
 			<div className="CardStyle">
 				<div className="card-left">
 					<img
-						src={require("../images/sillouette.jpg")}
-						alt="EMPTY"
+						src={tutorsRoute + result.photo} // ipaddress/TutorImages/result.photo
+						alt="../images/sillouette.jpg"
 						className="proPic"
 					/>
 				</div>
 				<div className="card-right">
 					<div className="cardText">
 						<h2>
-							<i>{result.name}e</i>
+							<i>{result.name}</i>
 						</h2>
 						<h3>
-							<i>{result.email}</i>
+							<i>{result.email}</i> // 
 						</h3>
 						<i>
 							{result.address.street}

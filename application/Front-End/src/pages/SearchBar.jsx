@@ -18,9 +18,16 @@ function SearchBar({ setResults }) {
 	// .then((response) => response.json())
 
 	const fetchData = (value) => {
-		fetch("https://jsonplaceholder.typicode.com/users")
-			.then((response) => response.json())
-			.then((json) => {
+		fetch("https://3.101.225.46:8003/getTutors", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify({
+				subject : "Physics",
+				searchText : "abc"
+			})
+		}).then((response) => response.json()).then((json) => {
 				const results = json.filter((user) => {
 					return (
 						value &&
