@@ -3,6 +3,7 @@
 	margin: 0;
 	padding: 0;
 	outline: none;
+	font-family: pl;
 }
 
 a,
@@ -60,7 +61,7 @@ header {
 	background-color: lightgray;
 }
 
-@media(max-width: 650px) {
+@media (max-width: 650px) {
 	.flex-1,
 	.flex-2,
 	.flex-3 {
@@ -85,4 +86,43 @@ header {
 .resultsAlign {
 	display: block;
 	padding-left: 100px;
+}
+
+.centerSearchBar {
+	padding-inline: 1rem;
+}
+
+[class^="pagination-main-"] {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	margin: 1rem;
+	color: #000000a2;
+}
+
+.pagination-center,
+.pagination-left,
+.pagination-right {
+	font-size: 1.5rem;
+	margin: 1rem;
+}
+
+.pagination-left:hover,
+.pagination-right:hover {
+	cursor: pointer;
+}
+
+.resultLine {
+	text-align: center;
+}
+
+.yes-results {
+	color: darkgreen;
+}
+
+.no-results {
+	color: red;
 }
