@@ -11,39 +11,7 @@ function TutorCard({ result }) {
 
 	//This is allowing for place holder cards in Index.js.
 	if (result == null) {
-		return (
-			<Fragment>
-				<div className="CardStyle">
-					<div className="card-left">
-						<img
-							src={require("../images/sillouette.jpg")} 
-							alt="EMPTY"
-							className="proPic"
-						/>
-					</div>
-					<div className="card-right">
-						<div className="cardText">
-							<h2>
-								<i>Full Name</i>
-							</h2>
-							<h3>
-								<i>Profession</i>
-							</h3>
-							<i>Description</i>
-							<br></br>
-						</div>
-						<div className="buttonHold">
-							<button className="cardbutton" onClick={routeChange}>
-								Contact
-							</button>
-							<button className="cardbutton" onClick={routeChange}>
-								View
-							</button>
-						</div>
-					</div>
-				</div>
-			</Fragment>
-		);
+		return null;
 	}
 
 	// Used when We have search results in Index.js

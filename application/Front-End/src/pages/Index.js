@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import TutorCard from "./TutorCard";
 import SearchResultsList from "./SearchResultsList";
 import TutorsSearchBox from "./TutorsSearchBox";
-
+import CardTemplate from "./CardTemplate";
 function Index() {
 	const [results, setResults] = useState([]);
 	return (
@@ -43,12 +43,10 @@ function Index() {
 						className="libraryPic"
 					/>
 					<div className="ContainterForRecents">
-						{/* from: 1 will send results to Tutor card*/}
-						{/* <SearchResultsList results={results} from={1} /> */}
-						<TutorCard />
-						<TutorCard />
-						<TutorCard />
-						<TutorCard />
+						<CardTemplate />
+						<CardTemplate />
+						<CardTemplate />
+						<CardTemplate />
 					</div>
 				</div>
 			</div>
