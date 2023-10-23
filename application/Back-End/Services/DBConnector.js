@@ -22,8 +22,7 @@ async function runQuery(query, variables) {
         return results[0];
     } catch (err) {
         console.error(err);
-    } finally {
-        pool.end();
+        return err;
     }
 }
 
