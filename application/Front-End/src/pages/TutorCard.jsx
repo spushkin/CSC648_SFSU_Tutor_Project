@@ -48,29 +48,31 @@ function TutorCard({ result }) {
 
 	// Used when We have search results in Index.js
 
-	const tutorsRoute = "https://3.101.225.46:8003/TutorImages/"
+	const tutorsRoute = "http://3.101.225.46:8003/TutorImages/"
 
 	return (
 		<Fragment>
 			<div className="CardStyle">
 				<div className="card-left">
+					<div className="ContainerForRecents">
 					<img
-						src={tutorsRoute + result.photo} // ipaddress/TutorImages/result.photo
+						src={tutorsRoute + result.Photo} // ipaddress/TutorImages/result.photo
 						alt="../images/sillouette.jpg"
 						className="proPic"
+						
 					/>
+					</div>
 				</div>
 				<div className="card-right">
 					<div className="cardText">
 						<h2>
-							<i>{result.name}</i>
+							<i>{result.Name}</i>
 						</h2>
 						<h3>
-							<i>{result.email}</i> // 
+							<i>{result.Email}</i>
 						</h3>
 						<i>
-							{result.address.street}
-							{result.address.zipcode}
+							{result.Description}
 						</i>
 						<br></br>
 					</div>
