@@ -25,7 +25,6 @@ function Tutors() {
 					 Results: {pageStart}-{pageEnd} out of {results.length}
 				</h2>
 			)}
-
 			<div class="main-container">
 				{results
 					// change filtering logic later ->  stubbed for now

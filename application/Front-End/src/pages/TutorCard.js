@@ -8,6 +8,8 @@ function TutorCard({result}) {
       let path = `/template`; 
       navigate(path);
     }
+
+    let profilePhotoPath = result.photo;
     //This is allowing for place holder cards in Index.js. 
     if(result == null){
     return(    <Fragment>
@@ -29,10 +31,12 @@ function TutorCard({result}) {
 
 
     // Used when We have search results in Index.js
+
+    // replace with url
     return (
         <Fragment>
             <div  className="CardStyle">
-                <img src={require('../images/sillouette.jpg')} alt="EMPTY" className="proPic"  />
+                <img src={"localhost:8003/"+profilePhotoPath} alt="EMPTY" className="proPic"  /> 
                 <div className='cardText'>
                     <h2><i>{result.name}e</i></h2>
                     <h3><i>{result.email}</i></h3>
