@@ -66,7 +66,7 @@ function SearchBar({ setResults }) {
 	const handleSubmit = () => {
 		var a = document.getElementById('searchFormSelect').value;
 		setSub(a);
-			if (input == "" && sub == "all"){
+			if (input == ""){
 			return	fetchAll();
 			}else{
 				fetchData();
