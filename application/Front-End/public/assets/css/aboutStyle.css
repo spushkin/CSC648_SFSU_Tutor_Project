@@ -1,93 +1,95 @@
-        *{
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            outline: none;
-        }
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
 
-        .interFont {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-weight: 900;
-        }
+.about-container {
+	margin-bottom: 5rem;
+}
 
-        .bar {
-            margin-left: auto;
-            margin-right: auto;
-            height: 2px;
-            width: 200px;
-            background-color: #000000;   
-        }
+.interFont {
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	font-weight: 900;
+}
 
-        .photo-grid {
-            display: grid;
-            height: 100%;
-            align-content: space-evenly;
-            grid-template-columns: auto auto auto;
-            column-gap: 10%;
-            row-gap: 8%;
-            padding: 60px 200px 0px;
-        }
+.interFont > * {
+	margin: 0.5rem;
+}
 
-        .photo-grid > div {
-            text-align: center;
-            padding: 0px  0px;
-            font-size: 30px;
-        }
+.bar {
+	margin-left: auto;
+	margin-right: auto;
+	height: 2px;
+	width: 200px;
+	background-color: #000000;
+}
 
-        .member-photo {
-            margin-left: auto;
-            margin-right: auto;
-            padding: 150px 10px;
-            background-color: black;
-            width: 300px;
-            height: 300px;
-        }
+.photo-grid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+}
 
-        #outer-container {
-            background-color: darkgrey;
-            width: 100%;
-            height: 400px;
-            padding-top: 1%;
-            padding-bottom: 1%;
-        }
+.photo-grid > div {
+	text-align: center;
+	padding: 0px 0px;
+	font-size: 30px;
+}
 
-        #table-info{
-            width: 100%;
-            height: 100%;
-        }
+.member-photo {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 150px 10px;
+	background-color: black;
+	width: 300px;
+	height: 300px;
+}
 
-        #photo {
-            background-color: black;
-            width: 100%;
-            height: 100%;
-        }
+#outer-container {
+	background-color: darkgrey;
+	width: 100%;
+	height: 400px;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
 
-        #innerTableStyle {
-            float: left;
-            padding-left: 5%;
-            padding-right: 5%;
-        }
+#table-info {
+	width: 100%;
+	height: 100%;
+}
 
-        .goBackStyle {
-            width: 10%;
-        }
+#photo {
+	background-color: black;
+	width: 100%;
+	height: 100%;
+}
 
-        .goBackStyle > h2 {
-            text-align: center;
-        }
+#innerTableStyle {
+	float: left;
+	padding-left: 5%;
+	padding-right: 5%;
+}
 
-        .teamPhotoPage {
-            height: 370px;
-            width: 370px;
-        }
+.goBackStyle {
+	width: 10%;
+}
 
-        .aboutPhotoPage {
-            height: 300px;
-            width: 300px;
-        }
+.goBackStyle > h2 {
+	text-align: center;
+}
 
-     
+.teamPhotoPage {
+	height: 370px;
+	width: 370px;
+}
 
-        
-
-
+.aboutPhotoPage {
+	height: 300px;
+	width: 300px;
+}
