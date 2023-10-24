@@ -20,8 +20,8 @@ function Template() {
                 <table id="table-info">
                     <tr>
                         <td className='goBackStyle'>
-                            <h2 className="interFont"><Link to="/about">Go Back</Link></h2>
-                            <h2 className="interFont"><Link to="/about">&lt;</Link></h2>
+                            <h2 className="interFont"><Link to="/">Go Back</Link></h2>
+                            <h2 className="interFont"><Link to="/">&lt;</Link></h2>
                         </td>
                         
                         <td style={{width:'20%'}}>
