@@ -20,6 +20,10 @@ app.post('/getTutors', bodyParser.json(), async (req, res) => {
     res.send(results);
 });
 
+app.get('/test', async (req, res) => {
+    res.send('Hello World!');
+});
+
 
 // Start the server
 app.listen(port, () => {
