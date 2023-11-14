@@ -11,6 +11,7 @@ import DaivikPurani from "./pages/DaivikPurani";
 import EsauBMedina from "./pages/EsauBMedina";
 import WilliamAmbriz from "./pages/WilliamAmbriz";
 import AksharGothi from "./pages/AksharGothi";
+import TutorInfo from "./pages/TutorInfo";
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 					<Route path="/about" element={<About />} />
 					<Route path="/tutors" element={<Tutors />} />
 					<Route path="/template" element={<Template />} />
+					<Route path="/TutorInfo" element={<TutorInfo />} />
 					<Route path="/jovannyramos" element={<JovannyRamos />} />
 					<Route path="/siarheipushkin" element={<SiarheiPushkin />} />
 					<Route path="/daivikpurani" element={<DaivikPurani />} />

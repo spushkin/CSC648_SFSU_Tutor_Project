@@ -1,11 +1,11 @@
 import React, { Fragment, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import TutorInfo from "./TutorInfo";
 function TutorCard({ result }) {
 	console.debug(result);
 	let navigate = useNavigate();
 	const routeChange = () => {
-		let path = `/template`;
+		let path = `/TutorInfo`;
 		navigate(path);
 	};
 
@@ -15,20 +15,31 @@ function TutorCard({ result }) {
 	}
 
 	// Used when We have search results in Index.js
-
+	// function imgas(){
+	// 	var code = 	`<img src={tutorsRoute + result.Photo} // ipaddress/TutorImages/result.photo alt="../images/sillouette.jpg" className="proPic" onError={(a) =>{ imgas(); } }/>`;
+	// 	 document.getElementById("PIC").innerHTML = code;
+	// 	//console.log(document.getElementById("PIC"));
+	// }
+						
+					
 	const tutorsRoute = "http://3.101.225.46:8003/TutorImages/"
-
+	
 	return (
 		<Fragment>
 			<div className="CardStyle">
 				<div className="card-left">
-					<div className="ContainerForRecents">
-					<img
-						src={tutorsRoute + result.Photo} // ipaddress/TutorImages/result.photo
-						alt="../images/sillouette.jpg"
-						className="proPic"
-						
-					/>
+					<div className="ContainerForRecents"id = "PIC"  >
+					<div >
+							<img
+								src={tutorsRoute + result.Photo} // ipaddress/TutorImages/result.photo
+								alt="../images/sillouette.jpg"
+								className="proPic"
+								// onError={(a) =>{
+								// 	 imgas();
+								// } }
+							/>
+					</div>
+				
 					</div>
 				</div>
 				<div className="card-right">
