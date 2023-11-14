@@ -116,3 +116,14 @@
 	cursor: pointer;
 	text-align: center;
 }
+
+.login-bottom-text {
+	margin-inline: auto;
+	padding: 1rem;
+}
+.login-button {
+	padding: 1rem;
+}
+.links-login:hover {
+	color: blue;
+}
