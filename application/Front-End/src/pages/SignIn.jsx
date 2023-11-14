@@ -21,15 +21,15 @@ function SignIn() {
 						</h1>
 						<div className="name-group sign-group-style ">
 							<div className="firstName sign-group-element">
-								<label className="signup-label" htmlFor="firstName">
-									<p className="required-field-star">First Name</p>
+								<label className="signup-label" htmlFor="userName">
+									<p className="required-field-star">Username</p>
 								</label>
 
 								<input
 									id="sign-up-fn-1"
 									className="form-control"
 									type="text"
-									placeholder="FirstName"
+									placeholder="UserName"
 									name="name"
 								/>
 							</div>
