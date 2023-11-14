@@ -6,6 +6,11 @@
 	font-family: "IBM Plex Sans", sans-serif;
 }
 
+body {
+	height: 100vh;
+	overflow: scroll;
+}
+
 a,
 button {
 	font-family: sans-serif;
@@ -18,6 +23,10 @@ button {
 header {
 	display: flex;
 	align-items: center;
+}
+
+.auth {
+	height: 100%;
 }
 
 .logo {

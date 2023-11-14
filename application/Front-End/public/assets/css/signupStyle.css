@@ -1,0 +1,118 @@
+.signin-form {
+	height: 100%;
+}
+
+.signin-form form {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-content: center;
+	align-items: center;
+	justify-content: flex-start;
+	margin-inline: 15rem;
+}
+.login-form form {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-content: center;
+	align-items: center;
+	justify-content: flex-start;
+	margin-inline: 15rem;
+}
+
+.form-title {
+	margin: 1rem 0 3rem 0;
+	text-align: center;
+}
+
+.form-title > hr {
+	margin-inline: 5rem;
+}
+
+.sign-group-style > * {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-inline: 5rem;
+}
+
+.sign-group-style input,
+.sign-group-style select,
+.sign-group-style textarea {
+	background-color: rgb(212, 210, 210);
+}
+
+#form-signup-1 > * {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	max-width: 40rem;
+}
+
+.required-field-star::before {
+	content: "* ";
+}
+
+#form-signup-1 p,
+#form-signup-1 label {
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+}
+
+.sign-group-element {
+	margin-bottom: 0.5rem;
+}
+.sign-group-element > * {
+	margin-bottom: 0.1rem;
+}
+
+.sign-group-element input,
+.sign-group-element select,
+.sign-group-element label {
+	min-height: 3rem;
+	padding-inline: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.policy {
+	display: flex;
+	flex-direction: row;
+	/*justify-content: flex-start;*/
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.policy > a {
+	margin-left: 1rem;
+	color: blue;
+}
+
+.signup-btn {
+	min-height: 3rem;
+	margin-inline: 2rem;
+}
+
+.sign-group-element textarea,
+.file-upload {
+	min-height: 5rem;
+}
+
+.file-upload {
+	/* display: none !important; */
+	cursor: pointer;
+}
+
+.file-input-label {
+	font-size: 1.3em;
+	padding: 10px 15px;
+	border: 1px solid black;
+	border-radius: 4%;
+	cursor: pointer;
+	text-align: center;
+}
