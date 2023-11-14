@@ -42,7 +42,7 @@
 .sign-group-style input,
 .sign-group-style select,
 .sign-group-style textarea {
-	background-color: rgb(212, 210, 210);
+	background-color: rgb(250, 245, 245);
 }
 
 #form-signup-1 > * {
@@ -130,11 +130,12 @@
 
 .file-drop-zone {
 	border: 2px dashed #aaa;
-	padding: 20px;
+	padding: 30px;
 	text-align: center;
 	cursor: pointer;
+	background-color: rgb(250, 245, 245);
 }
 
 .file-drop-zone.dragging {
-	border-color: #2196f3; /* Change color when dragging over */
+	border-color: #2196f3; /* change color when dragging over */
 }
