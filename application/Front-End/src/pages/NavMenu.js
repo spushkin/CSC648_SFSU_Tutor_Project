@@ -46,19 +46,19 @@ function NavMenu() {
 						}}
 					>
 						<nav>
-
-							<div className="navDropMenu" onClick={() =>
-								setMenuOpen(!menuOpen)
-							}>
+							<div
+								className="navDropMenu"
+								onClick={() => setMenuOpen(!menuOpen)}
+							>
 								<span></span>
 								<span></span>
 								<span></span>
 							</div>
-						
+
 							<ul className={menuOpen ? "open" : ""}>
 								<li>
 									<NavLink
-										to="/template"
+										to="/signup"
 										style={{
 											fontSize: "18px",
 											fontWeight: "bold",
@@ -68,7 +68,8 @@ function NavMenu() {
 										}}
 									>
 										Become a Tutor
-									</NavLink> {/*Become a tutor Link*/}
+									</NavLink>{" "}
+									{/*Become a tutor Link*/}
 								</li>
 
 								<li>
@@ -83,7 +84,8 @@ function NavMenu() {
 										}}
 									>
 										About Us
-									</NavLink> {/*About us Link*/}
+									</NavLink>{" "}
+									{/*About us Link*/}
 								</li>
 
 								<li>
@@ -98,22 +100,24 @@ function NavMenu() {
 										}}
 									>
 										Tutors
-									</NavLink> {/*Tutors Link*/}
+									</NavLink>{" "}
+									{/*Tutors Link*/}
 								</li>
 							</ul>
 						</nav>
 					</div>
-
 					{/* Icon */}
-					<div
-						style={{
-							width: "30px",
-							height: "30px",
-							borderRadius: "50%",
-							backgroundColor: "gray",
-						}}
-					></div> {/*Login Icon Link*/}
-
+					<a href={"/SignIn"}>
+						<div
+							style={{
+								width: "30px",
+								height: "30px",
+								borderRadius: "50%",
+								backgroundColor: "gray",
+							}}
+						></div>{" "}
+					</a>
+					{/*Login Icon Link*/}
 				</div>
 			</div>
 		</Fragment>
