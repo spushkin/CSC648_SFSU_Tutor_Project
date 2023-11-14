@@ -58,7 +58,7 @@ function SignIn() {
 								</button>
 								<span className="login-bottom-text">
 									Don't have a Account?{" "}
-									<a className="links-login" href="/tutors">
+									<a className="links-login" href="/studentsignup">
 										Sign-up
 									</a>
 								</span>
