@@ -127,3 +127,14 @@
 .links-login:hover {
 	color: blue;
 }
+
+.file-drop-zone {
+	border: 2px dashed #aaa;
+	padding: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.file-drop-zone.dragging {
+	border-color: #2196f3; /* Change color when dragging over */
+}

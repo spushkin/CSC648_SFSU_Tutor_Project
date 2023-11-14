@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import NavMenu from "./NavMenu";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import FileDropZone from "./FileDropZone";
 
 function SignUp() {
 	return (
@@ -116,33 +117,13 @@ function SignUp() {
 								<textarea></textarea>
 							</div>
 							<div className="upload-area sign-group-element">
-								<label
-									className="upload-media file-input-label"
-									htmlFor="mediaUpload"
-									for="cv-upoad"
-								>
-									CV upload
-								</label>
-								<input
-									id="cv-upoad"
-									className="file-upload"
-									type="file"
-								></input>
+								<label>Upload your CV </label>
+								<FileDropZone />
 							</div>
 
 							<div className="upload-area sign-group-element">
-								<label
-									className="upload-media file-input-label"
-									htmlFor="mediaUpload"
-									for="media-upoad"
-								>
-									Media (photos/videos){" "}
-								</label>
-								<input
-									id="media-upoad"
-									className="file-upload"
-									type="file"
-								></input>
+								<label>Media (photos/videos) </label>
+								<FileDropZone />
 							</div>
 
 							<div className="policy sign-group-element">
