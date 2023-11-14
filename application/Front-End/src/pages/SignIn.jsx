@@ -47,7 +47,7 @@ function SignIn() {
 									name="password"
 								/>
 							</div>
-							<div className="submit-form-botton sign-group-element">
+							<div className="submit-form-botton sign-group-element login-button">
 								<button
 									className="signup-btn"
 									type="submit"
@@ -56,6 +56,15 @@ function SignIn() {
 								>
 									Login
 								</button>
+								<span className="login-bottom-text">
+									Don't have a Account?{" "}
+									<a className="links-login" href="/tutors">
+										Sign-up
+									</a>
+								</span>
+								<a className="links-login login-bottom-text" href="">
+									<span>Forgot Password</span>
+								</a>
 							</div>
 						</div>
 					</form>
