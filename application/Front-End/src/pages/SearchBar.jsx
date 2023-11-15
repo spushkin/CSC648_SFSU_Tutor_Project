@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function SearchBar({ setResults }) {
 	const [input, setInput] = useState("");
-	const [sub, setSub] = useState("");
+	const [sub, setSub] = useState("all");
 	const [clicked, setClicked] = useState(false);
 
 	// fetch("3.101.225.46/getTutors", {
