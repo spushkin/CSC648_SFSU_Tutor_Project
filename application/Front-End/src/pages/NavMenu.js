@@ -7,7 +7,6 @@ function NavMenu() {
 
 	return (
 		<Fragment>
-
 			<div
 				style={{
 					display: "flex",
@@ -18,36 +17,37 @@ function NavMenu() {
 					backgroundColor: "#9cf4ff",
 				}}
 			>
-				{/* Title */}
-				<Link
-					to="/"
-					style={{
-						fontSize: "30px",
-						fontWeight: "bold",
-						fontStyle: "italic",
-						textDecoration: "none",
-						color: "black",
-					}}
-				>
-					Cheep
-				</Link>
+				<nav>
+					{/* Title */}
+					<Link
+						to="/"
+						style={{
+							fontSize: "30px",
+							fontWeight: "bold",
+							fontStyle: "italic",
+							textDecoration: "none",
+							color: "black",
+						}}
+					>
+						Cheep
+					</Link>
 
-				{/* Right container */}
-				<div
-					style={{
-						display: "flex",
-						alignItems: "center",
-						gap: "30px",
-					}}
-				>
-					{/* Navigation Links */}
+					<SearchBar />
+					{/* Right container */}
 					<div
 						style={{
 							display: "flex",
+							alignItems: "center",
 							gap: "30px",
 						}}
 					>
-						<nav>
+						{/* Navigation Links */}
+						<div
+							style={{
+								display: "flex",
+								gap: "30px",
+							}}
+						>
 							<div
 								className="navDropMenu"
 								onClick={() => setMenuOpen(!menuOpen)}
@@ -59,88 +59,34 @@ function NavMenu() {
 
 							<ul className={menuOpen ? "open" : ""}>
 								<li>
-									<NavLink
-										to="/signup"
-										style={{
-											fontSize: "18px",
-											fontWeight: "bold",
-											fontStyle: "italic",
-											textDecoration: "none",
-											color: "black",
-										}}
-									>
-										Become a Tutor
-									</NavLink>{" "}
-									{/*Become a tutor Link*/}
+									<NavLink to="/signup">Become a Tutor</NavLink>
 								</li>
-
 								<li>
-									<NavLink
-										to="/about"
-										style={{
-											fontSize: "18px",
-											fontWeight: "bold",
-											fontStyle: "italic",
-											textDecoration: "none",
-											color: "black",
-										}}
-									>
-										About Us
-									</NavLink>{" "}
-									{/*About us Link*/}
+									<NavLink to="/about">About Us</NavLink>
 								</li>
-
 								<li>
-									<NavLink
-										to="/tutors"
-										style={{
-											fontSize: "18px",
-											fontWeight: "bold",
-											fontStyle: "italic",
-											textDecoration: "none",
-											color: "black",
-										}}
-									>
-										Tutors
-									</NavLink>{" "}
-									{/*Tutors Link*/}
+									<NavLink to="/tutors">Tutors</NavLink>
 								</li>
 							</ul>
-						</nav>
+						</div>
+						{/* Icon */}
+						<a href={"/SignIn"}>
+							<div
+								style={{
+									width: "30px",
+									height: "30px",
+									borderRadius: "50%",
+									backgroundColor: "gray",
+								}}
+							></div>
+						</a>
 					</div>
-					{/* Icon */}
-					<a href={"/SignIn"}>
-						<div
-							style={{
-								width: "30px",
-								height: "30px",
-								borderRadius: "50%",
-								backgroundColor: "gray",
-							}}
-						></div>{" "}
-					</a>
-					{/*Login Icon Link*/}
-				</div>
-				<SearchBar />
-				<ul className={menuOpen ? "open" : ""}>
-					<li>
-						<Link to="/template">Become a Tutor</Link>
-					</li>
 
-					<li>
-						<Link to="/about">About Us</Link>
-					</li>
-
-					<li>
-						<Link to="/tutors">Tutors</Link>
-					</li>
-					<li>
-						<Link to="/"><img src={require("../images/sillouette.jpg")} className="iconStyle" /></Link>
-					</li>
-				</ul>
-			</nav>
+				</nav>
+			</div>
 		</Fragment>
 	);
 }
 
 export default NavMenu;
+
