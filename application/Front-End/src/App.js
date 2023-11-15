@@ -11,9 +11,6 @@ import DaivikPurani from "./pages/DaivikPurani";
 import EsauBMedina from "./pages/EsauBMedina";
 import WilliamAmbriz from "./pages/WilliamAmbriz";
 import AksharGothi from "./pages/AksharGothi";
-import SignUp from "./pages/SignUp";
-import SignIn from "./pages/SignIn";
-import SignUpStudent from "./pages/SignUpStudent";
 
 function App() {
 	return (
@@ -30,9 +27,6 @@ function App() {
 					<Route path="/EsauBMedina" element={<EsauBMedina />} />
 					<Route path="/williamambriz" element={<WilliamAmbriz />} />
 					<Route path="/akshargothi" element={<AksharGothi />} />
-					<Route path="/signup" element={<SignUp />} />
-					<Route path="/signin" element={<SignIn />} />
-					<Route path="/studentsignup" element={<SignUpStudent />} />
 				</Routes>
 			</Router>
 		</div>
