@@ -322,3 +322,7 @@ nav .navDropMenu span {
 .ContainterForRecents > * > .card-left {
 	padding-left: 3rem;
 }
+
+.signIn {
+	align-items: center;
+}
