@@ -1,11 +1,13 @@
 import React, { Fragment, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 function NavMenu() {
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	return (
 		<Fragment>
+
 			<div
 				style={{
 					display: "flex",
@@ -119,7 +121,24 @@ function NavMenu() {
 					</a>
 					{/*Login Icon Link*/}
 				</div>
-			</div>
+				<SearchBar />
+				<ul className={menuOpen ? "open" : ""}>
+					<li>
+						<Link to="/template">Become a Tutor</Link>
+					</li>
+
+					<li>
+						<Link to="/about">About Us</Link>
+					</li>
+
+					<li>
+						<Link to="/tutors">Tutors</Link>
+					</li>
+					<li>
+						<Link to="/"><img src={require("../images/sillouette.jpg")} className="iconStyle" /></Link>
+					</li>
+				</ul>
+			</nav>
 		</Fragment>
 	);
 }
