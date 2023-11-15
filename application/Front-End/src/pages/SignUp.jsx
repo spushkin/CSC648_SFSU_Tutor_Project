@@ -3,6 +3,7 @@ import NavMenu from "./NavMenu";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import FileDropZone from "./FileDropZone";
+import Dropdown from "./Dropdown";
 
 function SignUp() {
 	return (
@@ -50,10 +51,11 @@ function SignUp() {
 								<label className="topics-label" htmlFor="topicsLabel">
 									Topics
 								</label>
-								<select name="sfsu-topics" id="all-topics">
+								{/* <select name="sfsu-topics" id="all-topics">
 									<option value="math">Math</option>
 									<option value="physics">Physics</option>
-								</select>
+								</select> */}
+								<Dropdown />
 							</div>
 						</div>
 						<div className="form-group sign-group-style sign-group-element">
