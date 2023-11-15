@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 function NavMenu() {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -16,6 +17,7 @@ function NavMenu() {
 					<span></span>
 					<span></span>
 				</div>
+				<SearchBar />
 				<ul className={menuOpen ? "open" : ""}>
 					<li>
 						<Link to="/template">Become a Tutor</Link>
