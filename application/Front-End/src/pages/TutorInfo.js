@@ -12,18 +12,12 @@ function TutorInfo() {
         <Fragment>
             <NavMenu />
             <div id="outer-container2">
-          
-                <div className="gobackHolder">
-                    <button className="gobackButton" onClick={routeChange}>
-                        GO BACK 
-                    </button>
-                </div>
-           
-                 <br/>
- 
-                <div class="mediaRow">
-                        <div class="infoColumn" id= "2" >
-                            <img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="teamPhotoPage2" />
+          <div class="infoRow">
+                        <div class="infoColumn" >
+                        <img src={require('../images/sillouette.jpg')} alt="YOUR NAME HERE" className="teamPhotoPage2" />
+                    
+                         <button className="gobackButton" onClick={routeChange}>GO BACK </button>
+                                  
                         </div>
 
                         <div class="infoColumn">
@@ -32,9 +26,7 @@ function TutorInfo() {
                             <h3 id="info">Title</h3>
                             
                             <h4 id="info">Topics: Math English, Science, etc</h4>
-                            
-                          
-
+                    
                             <br/>
                             <i id="info3">   Extra large description </i>
                             <br/>
