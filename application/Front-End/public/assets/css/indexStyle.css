@@ -6,11 +6,6 @@
 	font-family: "IBM Plex Sans", sans-serif;
 }
 
-body {
-	height: 100vh;
-	overflow: scroll;
-}
-
 a,
 button {
 	font-family: sans-serif;
@@ -23,10 +18,6 @@ button {
 header {
 	display: flex;
 	align-items: center;
-}
-
-.auth {
-	height: 100%;
 }
 
 .logo {
@@ -55,7 +46,7 @@ header {
 	color: #cbcbcb;
 }
 
-button:not(.dropdown-btn) {
+button {
 	padding: 3px 5px;
 	background-color: rgba(44, 138, 201, 1);
 	border: none;
@@ -63,7 +54,7 @@ button:not(.dropdown-btn) {
 	transition: all 0.3s ease 0s;
 }
 
-button:hover:not(.dropdown-btn) {
+button:hover {
 	background-color: rgba(44, 138, 201, 0.8);
 }
 
@@ -261,8 +252,4 @@ nav .navDropMenu span {
 .ContainterForRecents > * > .card-right,
 .ContainterForRecents > * > .card-left {
 	padding-left: 3rem;
-}
-
-.signIn {
-	align-items: center;
 }
