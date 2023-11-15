@@ -72,12 +72,15 @@
 
 .sign-group-element input,
 .sign-group-element select,
-.sign-group-element label {
+.sign-group-element label,
+.dropdown,
+.dropdown-btn {
 	min-height: 3rem;
-	padding-inline: 1rem;
+	/* padding-inline: 1rem; */
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+	text-align: center;
 }
 
 .policy {
@@ -137,5 +140,27 @@
 }
 
 .file-drop-zone.dragging {
-	border-color: #2196f3; /* change color when dragging over */
+	/* change color when dragging over */
+	background-color: lightgoldenrodyellow;
+}
+
+.dropdown-btn {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	background-color: rgb(250, 245, 245);
+}
+
+.dropdown-btn:hover {
+	background-color: lightgoldenrodyellow;
+	/* border: 2px dashed #aaa; */
+}
+
+.topic-dropdown {
+	padding: 0.5rem;
+}
+
+.topic-dropdown:hover {
+	color: blue;
+	transition: color 0.2s;
 }
