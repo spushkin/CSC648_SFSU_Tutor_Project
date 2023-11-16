@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import NavMenu from "./NavMenu";
 import { Link } from "react-router-dom";
+import Footer from "../pages/Footer";
 
 function About() {
 	return (
@@ -113,6 +114,7 @@ function About() {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</Fragment>
 	);
 }
