@@ -117,6 +117,7 @@ function SignUpStudent() {
 									Sign Up
 								</button>
 							</div>
+							<Link to="/Signin" className="signIn">Have an account? Sign In</Link>
 						</div>
 					</form>
 				</div>
