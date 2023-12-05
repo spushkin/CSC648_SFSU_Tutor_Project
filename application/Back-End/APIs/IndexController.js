@@ -7,6 +7,9 @@ const getTutor = require('../Services/GetTutor');
 const createMessage = require('../Services/CreateMessage');
 const getMessage = require('../Services/GetMessage');
 const getTopic = require('../Services/GetTopic');
+const createTopic = require('../Services/CreateTopic');
+const createCategory = require('../Services/CreateCategory');
+const getCategory = require('../Services/GetCategory');
 
 // Define the exported function
 exports.getTutors = async (subject, searchText) => {
@@ -48,11 +51,7 @@ exports.getUser = async (email, password) => {
         // Retrieve all tutors from the database
         let user;
         user = await getUser(email);
-        if(user.password == password){
-            return true;
-        }else{
-            return false
-        }
+        return user;
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
@@ -127,6 +126,45 @@ exports.getTopic = async () => {
         user = await getTopic();
 
         return user;
+    } catch (error) {
+        // Handle any errors that occur
+        console.error(error);
+      return error;
+    }
+};
+exports.createTopic = async (Name, CategoryID, Description) => {
+    try {
+        // Retrieve all tutors from the database
+        let topic;
+        topic = await createTopic(Name, CategoryID, Description);
+
+        return topic;
+    } catch (error) {
+        // Handle any errors that occur
+        console.error(error);
+      return error;
+    }
+};
+exports.createCategory = async (Name, Description) => {
+    try {
+        // Retrieve all tutors from the database
+        let category;
+        category = await createCategory(Name, Description);
+
+        return category;
+    } catch (error) {
+        // Handle any errors that occur
+        console.error(error);
+      return error;
+    }
+};
+exports.getCategory = async () => {
+    try {
+        // Retrieve all tutors from the database
+        let categories;
+        categories = await getCategory();
+
+        return categories;
     } catch (error) {
         // Handle any errors that occur
         console.error(error);

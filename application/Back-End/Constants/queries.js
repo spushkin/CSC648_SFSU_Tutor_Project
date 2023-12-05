@@ -16,8 +16,11 @@ const queries = {
     createTutor: `INSERT INTO Tutor(Name, Email, TopicId, Cv, Description, Photo, Schedule) VALUES(?,?,?,?,?,?,?)`,
     getTutor: `SELECT * FROM Tutor WHERE Id= ?`,
     createMessage: `INSERT INTO Message (SenderId, RecevierId, Text) VALUES(?,?,?)`,
-    getMessage: `SELECT * FROM Message WHERE Id=? GROUP BY RecevierId`,
+    getMessage: `SELECT * FROM Message WHERE Id=?`,
     getTopic: `SELECT * FROM Topic`,
+    createTopic: `INSERT INTO Topic (Name, CategoryID, Description) VALUES(?, ?, ?)`,
+    createCategory: `INSERT INTO Category (Name, Description) VALUES (?, ?)`,
+    getCategory: `SELECT * FROM Category`
 
 };
 

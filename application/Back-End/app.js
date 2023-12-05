@@ -21,8 +21,6 @@ app.post('/getTutors', bodyParser.json(), async (req, res) => {
 });
 app.post('/createUser', bodyParser.json(), async (req, res) => {
     const { firstname, lastname, username, email, password} = req.body;
-    console.log("Ffdf");
-    console.log(firstname);
     const results = await indexController.createUser(firstname, lastname, username, email, password);
     res.send(results);
 });
@@ -43,23 +41,32 @@ app.post('/getTutor', bodyParser.json(), async (req, res) => {
 });
 app.post('/createMessage', bodyParser.json(), async (req, res) => {
     const { SenderId, RecevierId, Text } = req.body;
-    const results = await indexController.getTutors(SenderId, RecevierId, Text);
+    const results = await indexController.createMessage(SenderId, RecevierId, Text);
     res.send(results);
 });
 app.post('/getMessage', bodyParser.json(), async (req, res) => {
     const { id } = req.body;
-    const results = await indexController.getTutors(id);
+    const results = await indexController.getMessage(id);
     res.send(results);
 });
 app.post('/getTopic', bodyParser.json(), async (req, res) => {
-    const results = await indexController.getTutors();
+    const results = await indexController.getTopic();
     res.send(results);
 });
-
-app.get('/test', async (req, res) => {
-    res.send('Hello World!');
+app.post('/createTopic', bodyParser.json(), async (req, res) => {
+    const { Name, CategoryID, Description } = req.body;
+    const results = await indexController.createTopic(Name, CategoryID, Description);
+    res.send(results);
 });
-
+app.post('/createCategory', bodyParser.json(), async (req, res) => {
+    const { Name, Description } = req.body;
+    const results = await indexController.createCategory(Name, Description);
+    res.send(results);
+});
+app.post('/getCategory', bodyParser.json(), async (req, res) => {
+    const results = await indexController.getCategory();
+    res.send(results);
+});
 
 // Start the server
 app.listen(port, () => {
