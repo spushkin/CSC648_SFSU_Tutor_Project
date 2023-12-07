@@ -5,6 +5,8 @@ import TutorCard from "./TutorCard";
 import SearchResultsList from "./SearchResultsList";
 import TutorsSearchBox from "./TutorsSearchBox";
 import CardTemplate from "./CardTemplate";
+import Footer from "../pages/Footer";
+
 function Index() {
 	const [results, setResults] = useState([]);
 	return (
@@ -50,6 +52,7 @@ function Index() {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</Fragment>
 	);
 }
