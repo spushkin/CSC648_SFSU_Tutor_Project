@@ -1,8 +1,11 @@
 import React, { Fragment, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import SearchBar from "./SearchBar";
+import TutorsSearchBox from "./TutorsSearchBox";
 
 function NavMenu() {
 	const [menuOpen, setMenuOpen] = useState(false);
+	const [results, setResults] = useState([]);
 
 	return (
 		<Fragment>
@@ -17,6 +20,10 @@ function NavMenu() {
 					<span></span>
 				</div>
 				<ul className={menuOpen ? "open" : ""}>
+					<li className="searchBar">
+						<SearchBar setResults={setResults} />	
+					</li>
+
 					<li>
 						<Link to="/template">Become a Tutor</Link>
 					</li>
@@ -26,13 +33,11 @@ function NavMenu() {
 					</li>
 
 					<li>
-						<Link to="/tutors">Tutors</Link>
-					</li>
-					<li>
 						<Link to="/"><img src={require("../images/sillouette.jpg")} className="iconStyle" /></Link>
 					</li>
 				</ul>
 			</nav>
+			{results.length > 0 && <TutorsSearchBox results={results} />}
 		</Fragment>
 	);
 }
