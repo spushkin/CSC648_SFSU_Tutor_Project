@@ -98,13 +98,13 @@ function SearchBar({ setResults }) {
 						value={input}
 						onChange={(e) => handleChange(e.target.value)}
 					/>{" "}
-					<button
+					<Link to="/tutors"><button
 						type="submit"
 						className="goButton"
 						onClick={() => handleSubmit()}
 					>
 						Go
-					</button>
+					</button> </Link>
 				</form>
 			</div>
 		</Fragment>

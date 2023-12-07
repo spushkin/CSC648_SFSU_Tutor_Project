@@ -101,3 +101,7 @@ nav .menu span {
 	border-radius: 50%;
 	background-color: gray;
 }
+
+.searchBar {
+    padding-right: 10vh;
+}
