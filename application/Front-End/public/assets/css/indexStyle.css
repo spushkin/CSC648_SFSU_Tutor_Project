@@ -164,8 +164,9 @@ button:hover:not(.dropdown-btn) {
 	position: relative;
 	background-color: rgb(183, 199, 212);
 	margin: 5px 5px 5px 5px;
+	padding-right: 10px;
 	height: 42px;
-	width: 63px;
+	width: 150px;
 }
 
 .active {
@@ -246,6 +247,7 @@ nav .navDropMenu span {
 .ContainterForRecents .buttonHold {
 	margin-top: 69px;
 	margin-left: 7rem;
+	padding-right: 10px;
 }
 .ContainterForRecents > .cardbutton {
 	font-size: 13px;
