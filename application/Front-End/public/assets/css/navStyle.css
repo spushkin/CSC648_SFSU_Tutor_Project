@@ -105,3 +105,40 @@ nav .menu span {
 .searchBar {
     padding-right: 10vh;
 }
+.wrapper {
+    position: relative;
+    text-align: right;
+    }
+    .toggler{
+    opacity: 0;
+    pointer-events: none;
+    touch-action: none;
+ }
+.dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    flex-direction: column;
+    background-color: Transparent;
+    padding: 5px;
+    gap: 2px;
+    right: 0;
+}
+input:checked ~ .dropdown {
+    display: flex;
+        .dropLink{
+            background-color: rgb(190, 189, 189);
+            width: 150px;
+        }
+        .mid{
+            background-color: rgb(168, 168, 168);
+            width: 150px;
+        }
+    }
+    input:checked ~ .dropdown {
+        display: flex;
+            .exit{
+                background-color: transparent;
+                width: 150px;
+            }
+        }
