@@ -36,9 +36,6 @@ function CardTemplate({ result }) {
 							<button className="cardbutton" onClick={routeChange}>
 								Contact
 							</button>
-							<button className="cardbutton" onClick={routeChange}>
-								View
-							</button>
 						</div>
 					</div>
 				</div>
