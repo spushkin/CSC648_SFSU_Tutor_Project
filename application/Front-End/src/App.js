@@ -14,6 +14,7 @@ import AksharGothi from "./pages/AksharGothi";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import SignUpStudent from "./pages/SignUpStudent";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
 	return (
@@ -33,6 +34,7 @@ function App() {
 					<Route path="/signup" element={<SignUp />} />
 					<Route path="/signin" element={<SignIn />} />
 					<Route path="/studentsignup" element={<SignUpStudent />} />
+					<Route path="/dashboard" element={<Dashboard />} />
 				</Routes>
 			</Router>
 		</div>
