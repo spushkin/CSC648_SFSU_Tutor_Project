@@ -1,10 +1,133 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import NavMenu from "./NavMenu";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import FileDropZone from "./FileDropZone";
 
 function SignUpStudent() {
+	const url = ""
+	const [formInput, setFormInput] = useState({
+		firstName: "",
+		lastName: "",
+		email: "",
+		studentID: "",
+		password: "",
+		confirmPass: ""
+	})
+
+	const [formError, setFormError] = useState({
+		firstName: "",
+		lastName: "",
+		email: "",
+		studentID: "",
+		password: "",
+		confirmPass: ""
+	})
+
+	const validateFormInput = (event) => {
+		event.preventDefault();
+
+		// Initializing an object to track errors
+		let formError = {
+			firstName: "",
+			lastName: "",
+			email: "",
+			studentID: "",
+			password: "",
+			confirmPass: ""
+		};
+
+		// Checking if values are empty
+		if (!formInput.firstName && !formInput.lastName && !formInput.email && !formInput.studentID && !formInput.password && !formInput.confirmPass) {
+			setFormError({
+				...formError,
+				firstName: "Enter a first name",
+				lastName: "Enter a last name",
+				email: "Enter a valid email address",
+				studentID: "Enter a student ID",
+				password: "You must enter in a password",
+			});
+			return;
+		}
+
+		// Checking if Full name is empty
+		if (!formInput.firstName && !formInput.lastName) {
+			setFormError({
+				...formError,
+				firstName: "Must enter a first name",
+				lastName: "Must enter a last name"
+			});
+			return;
+		}
+
+		if (!formInput.firstName) {
+			setFormError({
+				...formError,
+				firstName: "Must enter a first name",
+			});
+			return;
+		}
+
+		if (!formInput.lastName) {
+			setFormError({
+				...formError,
+				lastName: "Must enter a last name",
+			});
+			return;
+		}
+
+		// Checking if email is empty
+		if (!formInput.email) {
+			setFormError({
+				...formError,
+				email: "Enter a valid email address",
+			});
+			return;
+		}
+		
+		// Checking if student id is empty
+		if (!formInput.studentID) {
+			setFormError({
+				...formError,
+				studentID: "Student ID should not be empty"
+			});
+			return;
+		}
+
+		// Check if password is empty
+		if (!formInput.password) {
+			setFormError({
+				...formError,
+				password: "Password should not be empty",
+			});
+			return;
+		}
+
+		// Checking if both passwords match
+		if (formInput.confirmPass !== formInput.password) {
+			setFormError({
+				...formError,
+				confirmPass: "Password and confirm password should be matching!"
+			});
+			return;
+		}
+
+		// Clear any previous errors
+		setFormError(formError);
+		setFormInput((prevState) => ({
+			...prevState,
+			successMsg: "Account Successfully Made!",
+		}));
+	}
+
+	const handleUserInput = (name, value) => {
+		setFormInput({
+			...formInput,
+			[name]: value,
+		});
+	};
+
+
 	return (
 		<Fragment>
 			<NavMenu />
@@ -15,7 +138,7 @@ function SignUpStudent() {
 					<div className="form-overlay"></div>
 				</div>
 				<div className="form-child signin-form">
-					<form id="form-signup-1">
+					<form id="form-signup-1" onSubmit={validateFormInput}>
 						<h1 className="form-title">
 							<b>Sign Up Application</b>
 							<hr />
@@ -27,24 +150,35 @@ function SignUpStudent() {
 								</label>
 
 								<input
-									id="sign-up-fn-1"
+									onChange={({ target }) => {
+										handleUserInput(target.name, target.value)
+									}}
+									id="firstName"
+									value={formInput.firstName}
 									className="form-control"
 									type="text"
-									placeholder="FirstName"
-									name="name"
+									placeholder="First Name"
+									name="firstName"
 								/>
+
+								<p className="error-message">{formError.firstName}</p>
 							</div>
 							<div className="lastName sign-group-element">
 								<label className="signup-label" htmlFor="LastName">
 									<p className="required-field-star">Last Name</p>
 								</label>
 								<input
-									id="sign-up-ln-1"
+									onChange={({ target }) => {
+										handleUserInput(target.name, target.value)
+									}}
+									id="lastName"
+									value={formInput.lastName}
 									className="form-control"
 									type="text"
-									placeholder="LastName"
-									name="lastname"
+									placeholder="Last Name"
+									name="lastName"
 								/>
+								<p className="error-message">{formError.lastName}</p>
 							</div>
 						</div>
 						<div className="form-group sign-group-style sign-group-element">
@@ -52,23 +186,34 @@ function SignUpStudent() {
 								<p className="required-field-star">Email Address (SFSU)</p>
 							</label>
 							<input
+								onChange={({ target }) => {
+									handleUserInput(target.name, target.value)
+								}} 
+								id="email"
+								value={formInput.email}
 								className="form-control"
 								type="email"
-								id="sign-up-em-1"
-								placeholder="Email Address"
+								placeholder="Email Address @sfsu"
 								name="email"
 							/>
+							<p className="error-message">{formError.email}</p>
 						</div>
 						<div className="student-id sign-group-style sign-group-element">
 							<label className="signup-label" htmlFor="LastName">
 								<p className="required-field-star">Student ID #</p>
 							</label>
 							<input
+								onChange={({ target }) => {
+									handleUserInput(target.name, target.value)
+								}}
+								id="studentID"
+								value={formInput.studentID}
 								className="form-control"
 								type="text"
 								placeholder="Student ID"
-								name="StudentID"
+								name="studentID"
 							/>
+							<p className="error-message">{formError.studentID}</p>
 						</div>
 						<div className="pass-group sign-group-style">
 							<div className="password  sign-group-element">
@@ -76,24 +221,35 @@ function SignUpStudent() {
 									<p className="required-field-star">Password</p>
 								</label>
 								<input
-									id="signup-password"
+									onChange={({ target }) => {
+										handleUserInput(target.name, target.value)
+									}} 
+									id="password"
+									value={formInput.password}
 									className="form-control"
 									type="password"
 									placeholder="Password"
 									name="password"
 								/>
+								<p className="error-message">{formError.password}</p>
 							</div>
 							<div className="confirm-pass sign-group-element">
 								<label className="signup-label" htmlFor="confirmPassword">
 									<p className="required-field-star">Confirm Password</p>
 								</label>
 								<input
-									id="signup-password-2"
+									onChange={({ target }) => {
+										handleUserInput(target.name, target.value)
+									}} 
+									id="confirmPass"
+									value={formInput.confirmPass}
 									className="form-control"
 									type="password"
 									placeholder="Confirm Password"
-									name="password2"
+									name="confirmPass"
 								/>
+								<p className="error-message">{formError.confirmPass}</p>
+								<p className="success-message">{formInput.successMsg}</p>
 							</div>
 							<div className="policy sign-group-element">
 								<input
@@ -108,14 +264,14 @@ function SignUpStudent() {
 								</a>
 							</div>
 							<div className="submit-form-botton sign-group-element">
-								<Link to="/signin"><button
+								<button
 									className="signup-btn"
 									type="submit"
-									value="Sign Up"
+									value="Submit"
 									id="signup-btn-1"
 								>
 									Sign Up
-								</button></Link>
+								</button>
 							</div>
 							<Link to="/Signin" className="signIn">Have an account? Sign In</Link>
 						</div>
