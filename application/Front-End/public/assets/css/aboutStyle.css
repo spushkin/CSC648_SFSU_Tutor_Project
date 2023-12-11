@@ -50,7 +50,7 @@
 	width: 300px;
 	height: 300px;
 }
-
+/* CSS FOR TUTOR INFO BELOW */
 #outer-container {
 	background-color: darkgrey;
 	width: 100%;
@@ -76,9 +76,113 @@
 	padding-right: 5%;
 }
 
-.goBackStyle {
-	width: 10%;
+
+#outer-container2{
+	background-color: rgba(146, 144, 144, 0.692);
+	width: 100%;
+	min-height: 750px;
+	height: auto;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	overflow:flex;
+	border: 13px solid rgb(107, 107, 107);
 }
+
+
+
+#info{
+	
+	padding-left: 5%;
+	padding-right: 5%;
+	font-size: 32pt;
+}
+
+#info3{
+	
+	padding-left: 5%;
+	padding-right: 5%;
+	font-size: 30pt;
+	
+}
+.profileInfoHolder{
+	background-color:  transparent;
+	width: 62%;
+	height: 100%;
+
+}
+
+.teamPhotoPage2{
+	float: right;
+	width: 425px;
+	margin-left: 50px;
+}
+
+.mediaBox{
+	width: 100%;
+	height: auto;
+	border: 13px solid rgb(107, 107, 107);
+	padding: 50px;
+	
+}
+.gobackButton{
+	margin-top: 130px;
+	height: 150px;
+	width: 180px;
+	background-color: transparent;
+	position: relative;
+	font-size: 16pt;
+	
+	
+}
+
+
+.reachButton{
+	background-color: rgba(255, 255, 255, 0.781);
+	margin-right: 20px;
+	float: right;
+	width: 250px;
+	height: 100px;
+	margin-top: 31%;
+	font-size: 16pt;
+}
+.mediaColumn {
+	font-size: 20pt;
+	float: left;
+	width: 33.33%;
+	padding: 10px;
+	min-height: 200px;
+	height: auto; /* Should be removed. Only for demonstration */
+	border: 10px solid rgb(131, 131, 131);
+	text-align: center;
+  }
+  
+  /* Clear floats after the columns */
+  .mediaRow:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+
+  .infoColumn {
+	
+	min-width: 30%;
+	width: auto;
+	height: auto;
+	float: left;
+	border: transparent;
+    display: block;
+	
+
+  }
+  
+  /* Clear floats after the columns */
+  .infoRow:after {
+	content: "";
+	display: table;
+	clear: both;
+	padding-right: 20px;
+  }
+
 
 .goBackStyle > h2 {
 	text-align: center;
@@ -87,9 +191,14 @@
 .teamPhotoPage {
 	height: 370px;
 	width: 370px;
+
 }
 
 .aboutPhotoPage {
 	height: 300px;
 	width: 300px;
 }
+
+
+
+

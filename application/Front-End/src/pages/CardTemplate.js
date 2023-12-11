@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Template from "./Template";
+import TutorInfo from "./TutorInfo";
 
 function CardTemplate({ result }) {
 
     let navigate = useNavigate();
 	const routeChange = () => {
-		let path = `/template`;
+		let path = `/TutorInfo`;
 		navigate(path);
 	};
         

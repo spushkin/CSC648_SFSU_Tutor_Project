@@ -25,7 +25,7 @@ function NavMenu() {
 					</li>
 
 					<li>
-						<Link to="/template">Become a Tutor</Link>
+						<Link to="/template">Become a Tutor</Link> 
 					</li>
 
 					<li>
