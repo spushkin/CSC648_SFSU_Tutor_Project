@@ -1,12 +1,18 @@
 import React, { Fragment, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, createSearchParams } from "react-router-dom";
 import TutorInfo from "./TutorInfo";
 function TutorCard({ result }) {
 	console.debug(result);
 	let navigate = useNavigate();
 	const routeChange = () => {
 		let path = `/TutorInfo`;
-		navigate(path);
+		navigate(path, {
+            state: {
+			Name: result.Name,
+			Description: result.Description,
+			email: result.Email,
+			Photo: tutorsRoute+result.Photo}
+          });
 	};
 
 	//This is allowing for place holder cards in Index.js.
