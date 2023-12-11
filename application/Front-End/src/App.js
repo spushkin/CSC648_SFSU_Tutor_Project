@@ -15,6 +15,7 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import SignUpStudent from "./pages/SignUpStudent";
 import Dashboard from "./pages/Dashboard";
+import TutorInfo from "./pages/TutorInfo";
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 					<Route path="/about" element={<About />} />
 					<Route path="/tutors" element={<Tutors />} />
 					<Route path="/template" element={<Template />} />
+					<Route path="/TutorInfo" element={<TutorInfo />} />
 					<Route path="/jovannyramos" element={<JovannyRamos />} />
 					<Route path="/siarheipushkin" element={<SiarheiPushkin />} />
 					<Route path="/daivikpurani" element={<DaivikPurani />} />
