@@ -98,7 +98,9 @@
 
 .signup-btn {
 	min-height: 3rem;
-	margin-inline: 2rem;
+	min-width: 10rem;
+	margin-inline: 10rem;
+	
 }
 
 .sign-group-element textarea,

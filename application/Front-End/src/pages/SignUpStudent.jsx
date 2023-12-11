@@ -108,14 +108,14 @@ function SignUpStudent() {
 								</a>
 							</div>
 							<div className="submit-form-botton sign-group-element">
-								<button
+								<Link to="/signin"><button
 									className="signup-btn"
 									type="submit"
 									value="Sign Up"
 									id="signup-btn-1"
 								>
 									Sign Up
-								</button>
+								</button></Link>
 							</div>
 							<Link to="/Signin" className="signIn">Have an account? Sign In</Link>
 						</div>
