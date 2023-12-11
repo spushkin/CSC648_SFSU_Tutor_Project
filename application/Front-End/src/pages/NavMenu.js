@@ -25,7 +25,7 @@ function NavMenu() {
 					</li>
 
 					<li>
-						<Link to="/template">Become a Tutor</Link> 
+						<Link to="/signup">Become a Tutor</Link> 
 					</li>
 
 					<li>
@@ -40,7 +40,7 @@ function NavMenu() {
 								<img src={require("../images/sillouette.jpg")}  className="iconStyle" alt=""/>
 							</label>
 							<div  class="dropdown">
-								<a className= "dropLink" href="/signup">Sign Up</a>
+								<a className= "dropLink" href="/studentsignup">Sign Up</a>
 								<a  className= "mid"href="/signin">Sign In</a>
 							</div>
 						</div>
