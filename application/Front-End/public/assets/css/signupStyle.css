@@ -166,3 +166,11 @@
 	color: blue;
 	transition: color 0.2s;
 }
+
+.error-message {
+	color: red;
+}
+
+.success-message {
+	color: darkgreen;
+}
