@@ -6,10 +6,12 @@ import TutorsSearchBox from "./TutorsSearchBox";
 function NavMenu() {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [results, setResults] = useState([]);
-	const user = JSON.parse(localStorage.getItem('user'));
+	const user = JSON.parse(sessionStorage.getItem('user'));
 
-	if (user != null){
-		console.log(user)
+	// Function for logout button 
+	const logout = () => {
+		sessionStorage.removeItem('user');
+		// Perform any additional logout operations like redirecting to login page
 	}
 	return (
 		<Fragment>
@@ -25,11 +27,11 @@ function NavMenu() {
 				</div>
 				<ul className={menuOpen ? "open" : ""}>
 					<li className="searchBar">
-						<SearchBar setResults={setResults} />	
+						<SearchBar setResults={setResults} />
 					</li>
 
 					<li>
-						<Link to="/signup">Become a Tutor</Link> 
+						<Link to="/signup">Become a Tutor</Link>
 					</li>
 
 					<li>
@@ -39,19 +41,19 @@ function NavMenu() {
 					<li>
 						{/* <Link to="/"><img src={require("../images/sillouette.jpg")} className="iconStyle" /></Link> */}
 						<div className="wrapper">
-						<input className="toggler" id="toggler" type="checkbox"/>
+							<input className="toggler" id="toggler" type="checkbox" />
 							<label htmlFor="toggler">
-								<img src={require("../images/sillouette.jpg")}  className="iconStyle" alt=""/>
+								<img src={require("../images/sillouette.jpg")} className="iconStyle" alt="" />
 							</label>
-							<div  className="dropdown">
-								<a className= "dropLink" href="/studentsignup">Sign Up</a>
-								<a  className= "mid"href="/signin">Sign In</a>
-								<a  className= "mid"href="/dashboard">MyDash</a>
-								<a  className= "mid"href="/">logout</a>
+							<div className="dropdown">
+								<a className="dropLink" href="/studentsignup">Sign Up</a>
+								<a className="mid" href="/signin">Sign In</a>
+								<a className="mid" href="/dashboard">MyDash</a>
+								<a className="mid" href="/">logout</a>
 							</div>
 						</div>
-						
-					
+
+
 					</li>
 				</ul>
 			</nav>
