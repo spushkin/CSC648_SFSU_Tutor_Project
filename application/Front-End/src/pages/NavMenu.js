@@ -6,7 +6,11 @@ import TutorsSearchBox from "./TutorsSearchBox";
 function NavMenu() {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [results, setResults] = useState([]);
+	const user = JSON.parse(localStorage.getItem('user'));
 
+	if (user != null){
+		console.log(user)
+	}
 	return (
 		<Fragment>
 			<nav>
@@ -42,6 +46,8 @@ function NavMenu() {
 							<div  className="dropdown">
 								<a className= "dropLink" href="/studentsignup">Sign Up</a>
 								<a  className= "mid"href="/signin">Sign In</a>
+								<a  className= "mid"href="/dashboard">MyDash</a>
+								<a  className= "mid"href="/">logout</a>
 							</div>
 						</div>
 						
