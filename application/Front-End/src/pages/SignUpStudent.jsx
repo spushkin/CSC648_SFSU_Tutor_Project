@@ -23,7 +23,7 @@ function SignUpStudent() {
 		confirmPass: ""
 	})
 
-	const validateFormInput = (event) => {
+	async function validateFormInput(event) {
 		event.preventDefault();
 
 		// Initializing an object to track errors
@@ -124,27 +124,11 @@ function SignUpStudent() {
 
 		console.log(formInput);
 
-		// try {
-		// 	let result = fetch('http://3.101.225.46:8003/createUser/', {
-		// 		method: 'post',
-		// 		mode:	'no-cors',
-		// 		headers: {
-		// 			'Accept' : 'application/json',
-		// 			'Content-type': 'application/json', 
-		// 		},
-		// 		body: JSON.stringify({
-		// 			key1: 'myusername'
-		// 		})
-		// 	});
-		// 	if (!result.ok) {
-        //         throw new Error(`HTTP error! Status: ${result.status}`);
-        //     }
-
-		// 	console.log('Result: ' + result);
-
-		// } catch(e) {
-		// 	console.log(e);
-		// }
+		try {
+			testApi();
+		} catch (e) {
+			console.log(e);
+		}
 	}
 
 	const handleUserInput = (name, value) => {
@@ -153,6 +137,22 @@ function SignUpStudent() {
 			[name]: value,
 		});
 	};
+
+	const testApi = () => {
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+			method: 'POST',
+			body: JSON.stringify({
+				firstName: formInput.firstName,
+				lastName: formInput.lastName,
+				email: formInput.email,
+				studentID: formInput.studentID,
+				password: formInput.password,
+			}),
+			headers: {
+				'Content-type': 'application/json; charset=UTF-8',
+			},
+		}).then(response => console.log(response.status))
+    };
 
 
 	return (
@@ -191,7 +191,7 @@ function SignUpStudent() {
 								<p className="error-message">{formError.firstName}</p>
 							</div>
 							<div className="lastName sign-group-element">
-								<label className="signup-label" htmlFor="LastName">
+								<label className="signup-label" htmlFor="lastName">
 									<p className="required-field-star">Last Name</p>
 								</label>
 								<input
@@ -226,7 +226,7 @@ function SignUpStudent() {
 							<p className="error-message">{formError.email}</p>
 						</div>
 						<div className="student-id sign-group-style sign-group-element">
-							<label className="signup-label" htmlFor="LastName">
+							<label className="signup-label" htmlFor="studentID">
 								<p className="required-field-star">Student ID #</p>
 							</label>
 							<input
@@ -261,7 +261,7 @@ function SignUpStudent() {
 								<p className="error-message">{formError.password}</p>
 							</div>
 							<div className="confirm-pass sign-group-element">
-								<label className="signup-label" htmlFor="confirmPassword">
+								<label className="signup-label" htmlFor="confirmPass">
 									<p className="required-field-star">Confirm Password</p>
 								</label>
 								<input
@@ -296,6 +296,7 @@ function SignUpStudent() {
 									type="submit"
 									value="Submit"
 									id="signup-btn-1"
+									onClick={testApi}
 								>
 									Sign Up
 								</button>
