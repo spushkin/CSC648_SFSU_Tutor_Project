@@ -3,6 +3,8 @@ const cors=require('cors');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 8003;
+const AWS = require('aws-sdk');
+const multer = require('multer');
 
 // import from controller here
 const indexController = require('./APIs/IndexController');
@@ -67,6 +69,35 @@ app.post('/getCategory', bodyParser.json(), async (req, res) => {
     const results = await indexController.getCategory();
     res.send(results);
 });
+
+AWS.config.update({
+    accessKeyId: 'AKIAYCLPW4ZA6K5MKQU3',
+    secretAccessKey: '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',
+    region: 'us-west-1'
+})
+const s3 = new AWS.S3();
+
+const storage = multer.memoryStorage();
+const upload = multer({storage: storage});
+
+app.post('/upload', upload.single('file'), async(req, res) => {
+    const file = req.file;
+
+    const params = {
+        Bucket: 'tutoringsite',
+        Key: file.originalname,
+        Body: file.buffer,
+        ContentType: file.mimetype,
+        ACL: 'public-read'
+    };
+    console.log(params);
+    s3.upload(params, (err, data) => {
+        if(!err){
+            res.json({url: data.Location});
+        }
+    })
+})
+
 
 // Start the server
 app.listen(port, () => {
