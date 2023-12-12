@@ -11,9 +11,8 @@ function TutorCard({ result }) {
 			Name: result.Name,
 			Description: result.Description,
 			email: result.Email,
-			// title: result.title, not implemented 
-			// media: result.media, not implemented 
-			// topics: result.topics not implemented 
+			sched: result.Schedule, 
+			 topics: result.Topicid,
 			Photo: tutorsRoute+result.Photo}
           });
 	};

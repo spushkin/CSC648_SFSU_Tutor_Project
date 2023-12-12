@@ -177,7 +177,6 @@ button:hover:not(.dropdown-btn) {
 
 .cardbutton {
 	font-size: 13px;
-	position: relative;
 	background-color: rgb(183, 199, 212);
 	margin: 5px 5px 5px 5px;
 	padding-right: 10px;
