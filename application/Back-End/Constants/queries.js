@@ -15,6 +15,7 @@ const queries = {
     getUser: `SELECT * FROM User WHERE Email = ?`,
     createTutor: `INSERT INTO Tutor(Name, Email, TopicId, Cv, Description, Photo, Schedule) VALUES(?,?,?,?,?,?,?)`,
     getTutor: `SELECT * FROM Tutor WHERE Id= ?`,
+    getTutorByEmail: `SELECT * FROM Tutor WHERE Email= ?`,
     createMessage: `INSERT INTO Message (SenderId, RecevierId, Text) VALUES(?,?,?)`,
     getMessage: `SELECT * FROM Message WHERE Id=?`,
     getTopic: `SELECT * FROM Topic`,
