@@ -2,10 +2,9 @@ import React, { Fragment, useState } from "react";
 import NavMenu from "./NavMenu";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
-import FileDropZone from "./FileDropZone";
 
 function SignUpStudent() {
-	const url = ""
+	const apiEndpoint = 'http://3.101.225.46:8003/createUser/';
 	const [formInput, setFormInput] = useState({
 		firstName: "",
 		lastName: "",
@@ -114,10 +113,38 @@ function SignUpStudent() {
 
 		// Clear any previous errors
 		setFormError(formError);
+		const newdata = {...formInput}
+		newdata[event.target.id] = event.target.value;
+		setFormInput(newdata);
+
 		setFormInput((prevState) => ({
 			...prevState,
 			successMsg: "Account Successfully Made!",
 		}));
+
+		console.log(formInput);
+
+		// try {
+		// 	let result = fetch('http://3.101.225.46:8003/createUser/', {
+		// 		method: 'post',
+		// 		mode:	'no-cors',
+		// 		headers: {
+		// 			'Accept' : 'application/json',
+		// 			'Content-type': 'application/json', 
+		// 		},
+		// 		body: JSON.stringify({
+		// 			key1: 'myusername'
+		// 		})
+		// 	});
+		// 	if (!result.ok) {
+        //         throw new Error(`HTTP error! Status: ${result.status}`);
+        //     }
+
+		// 	console.log('Result: ' + result);
+
+		// } catch(e) {
+		// 	console.log(e);
+		// }
 	}
 
 	const handleUserInput = (name, value) => {
