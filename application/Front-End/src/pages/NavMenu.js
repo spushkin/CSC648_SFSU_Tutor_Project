@@ -19,7 +19,7 @@ function NavMenu() {
 		console.log("logout");
 		sessionStorage.removeItem('user');
 		console.log("does User exist after logout:\n"+sessionStorage.getItem('user'))
-		//window.location.replace("http://localhost:3000/");
+		window.location.replace("http://localhost:3000/");
 		// Perform any additional logout operations like redirecting to login page
 	}
 	return (
