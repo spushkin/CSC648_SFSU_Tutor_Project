@@ -27,7 +27,7 @@ const result = useLocation();
                         <div class="infoColumn">
                             <h1 id="info">{result.state.Name}</h1> 
                             
-                            <h3 id="info">Title</h3>
+                            <h3 id="info">Title: {result.state.title}</h3>
                             
                             <h4 id="info">Topics: {result.state.email}</h4>
                     
@@ -47,7 +47,7 @@ const result = useLocation();
                     <h1 id="">Media:</h1> 
                     <div className="mediaRow">
                         <div class="mediaColumn" >
-                        FILE 1
+                        {/* {result.state.title} */}
                         </div>
                         <div class="mediaColumn" >
                         FILE 2 
