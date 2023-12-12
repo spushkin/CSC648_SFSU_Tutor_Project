@@ -10,6 +10,7 @@ const getTopic = require('../Services/GetTopic');
 const createTopic = require('../Services/CreateTopic');
 const createCategory = require('../Services/CreateCategory');
 const getCategory = require('../Services/GetCategory');
+const bycrypt = require('bcryptjs');
 
 // Define the exported function
 exports.getTutors = async (subject, searchText) => {
@@ -34,7 +35,7 @@ exports.createUser = async (firstname, lastname, username, email, password) => {
     try {
         // Retrieve all tutors from the database
         let user;
-        user = await createUser(firstname, lastname, username, email, password);
+        user = await createUser(firstname, lastname, username, email, bycrypt.hashSync(password, 10));
 
         // Send the tutors as a response
         return user;
@@ -51,7 +52,11 @@ exports.getUser = async (email, password) => {
         // Retrieve all tutors from the database
         let user;
         user = await getUser(email);
-        return user;
+        if(bycrypt.compareSync(password, user[0].Password)){
+            return user;
+        }else{
+            return false;
+        }
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
