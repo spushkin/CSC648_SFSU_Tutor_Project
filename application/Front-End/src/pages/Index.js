@@ -18,6 +18,7 @@ function Index() {
 					<h2 className="recent">
 						<i>Recently Applied Tutors</i>
 					</h2>
+					<div className="underline"></div>
 					<img
 						src={require("../images/sfLibrary.png")}
 						alt="SFSU Library"
