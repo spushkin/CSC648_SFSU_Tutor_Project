@@ -6,7 +6,7 @@ function CardTemplate({ result }) {
 
     let navigate = useNavigate();
 	const routeChange = () => {
-		let path = `/TutorInfo`;
+		let path = `/`;
 		navigate(path);
 	};
         

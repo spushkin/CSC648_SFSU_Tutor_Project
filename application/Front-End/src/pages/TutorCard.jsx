@@ -11,6 +11,9 @@ function TutorCard({ result }) {
 			Name: result.Name,
 			Description: result.Description,
 			email: result.Email,
+			// title: result.title, not implemented 
+			// media: result.media, not implemented 
+			// topics: result.topics not implemented 
 			Photo: tutorsRoute+result.Photo}
           });
 	};
@@ -65,7 +68,7 @@ function TutorCard({ result }) {
 						<button className="cardbutton" onClick={routeChange}>
 							Contact
 						</button>
-						<button className="cardbutton">View</button>
+						
 					</div>
 				</div>
 			</div>
