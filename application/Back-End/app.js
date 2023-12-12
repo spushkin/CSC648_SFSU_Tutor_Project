@@ -39,6 +39,13 @@ app.post('/getTutor', bodyParser.json(), async (req, res) => {
     const results = await indexController.getTutor(id);
     res.send(results);
 });
+
+app.post('/getTutorByEmail', bodyParser.json(), async (req, res) => {
+    const { email } = req.body;
+    const results = await indexController.getTutorByEmail(email);
+    res.send(results);
+});
+
 app.post('/createMessage', bodyParser.json(), async (req, res) => {
     const { SenderId, RecevierId, Text } = req.body;
     const results = await indexController.createMessage(SenderId, RecevierId, Text);

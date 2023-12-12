@@ -4,6 +4,7 @@ const createUser = require('../Services/CreateUser');
 const getUser = require('../Services/GetUser');
 const createTutor = require('../Services/CreateTutor');
 const getTutor = require('../Services/GetTutor');
+const getTutorByEmail = require('../Services/GetTutorbyEmail');
 const createMessage = require('../Services/CreateMessage');
 const getMessage = require('../Services/GetMessage');
 const getTopic = require('../Services/GetTopic');
@@ -89,6 +90,21 @@ exports.getTutor = async (id) => {
       return error;
     }
 };
+
+exports.getTutorByEmail = async (email) => {
+    try {
+        // Retrieve all tutors from the database
+        let Tutor;
+        Tutor = await getTutorByEmail(email);
+
+        return Tutor;
+    } catch (error) {
+        // Handle any errors that occur
+        console.error(error);
+      return error;
+    }
+};
+
 
 // Define the exported function
 exports.createMessage = async (SenderId, RecevierId, Text) => {
