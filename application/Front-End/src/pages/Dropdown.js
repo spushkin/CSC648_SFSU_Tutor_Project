@@ -28,7 +28,7 @@ const Dropdown = () => {
 
 	// JSX structure for the Dropdown component
 	return (
-		<div className="dropdown">
+		<div className="dropdown-topics">
 			{/* Button to toggle the dropdown */}
 			<button type="button" className="dropdown-btn" onClick={handleToggle}>
 				{selectedOption ? selectedOption : "Click to select Topic"}
