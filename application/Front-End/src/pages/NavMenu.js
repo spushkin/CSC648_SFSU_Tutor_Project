@@ -34,12 +34,12 @@ function NavMenu() {
 
 					<li>
 						{/* <Link to="/"><img src={require("../images/sillouette.jpg")} className="iconStyle" /></Link> */}
-						<div class="wrapper">
+						<div className="wrapper">
 						<input className="toggler" id="toggler" type="checkbox"/>
-							<label for="toggler">
+							<label htmlFor="toggler">
 								<img src={require("../images/sillouette.jpg")}  className="iconStyle" alt=""/>
 							</label>
-							<div  class="dropdown">
+							<div  className="dropdown">
 								<a className= "dropLink" href="/studentsignup">Sign Up</a>
 								<a  className= "mid"href="/signin">Sign In</a>
 							</div>

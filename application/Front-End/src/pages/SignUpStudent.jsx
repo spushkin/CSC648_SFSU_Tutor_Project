@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
 function SignUpStudent() {
-	const apiEndpoint = 'http://3.101.225.46:8003/createUser/';
+	const apiEndpoint = 'http://localhost:8003/CreateUser'
 	const [formInput, setFormInput] = useState({
 		firstName: "",
 		lastName: "",
@@ -139,7 +139,7 @@ function SignUpStudent() {
 	};
 
 	const testApi = () => {
-        fetch('https://jsonplaceholder.typicode.com/posts', {
+        fetch(apiEndpoint, {
 			method: 'POST',
 			body: JSON.stringify({
 				firstName: formInput.firstName,
