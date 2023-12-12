@@ -11,7 +11,7 @@ app.use(express.static('../Public'));
 const options = {
     origin: '*',
     }
-app.use(cors(options));
+app.use(cors());
 
 // Define your API routes here
 app.post('/getTutors', bodyParser.json(), async (req, res) => {
