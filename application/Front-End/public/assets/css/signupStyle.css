@@ -74,6 +74,7 @@
 .sign-group-element select,
 .sign-group-element label,
 .dropdown,
+.dropdown-topics,
 .dropdown-btn {
 	min-height: 3rem;
 	/* padding-inline: 1rem; */
@@ -100,7 +101,6 @@
 	min-height: 3rem;
 	min-width: 10rem;
 	margin-inline: 10rem;
-	
 }
 
 .sign-group-element textarea,
