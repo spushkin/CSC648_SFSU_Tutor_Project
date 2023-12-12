@@ -13,7 +13,8 @@ function CardTemplate({ result }) {
 	if (result == null) {
 		return (
 			<Fragment>
-				<div className="CardStyle">
+				
+				<div className="CardStyle2">
 					<div className="card-left">
 						<img
 							src={require("../images/sillouette.jpg")} 
