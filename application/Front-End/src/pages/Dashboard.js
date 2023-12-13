@@ -47,6 +47,10 @@ function Dashboard() {
         }
     ];
 
+    const display = () => {
+        console.log(sessionStorage.getItem);
+    }
+
     const getActiveClass = (tabName) => activeTab === tabName ? 'active' : '';
 
     return (
@@ -90,7 +94,7 @@ function Dashboard() {
                                 <h3>Description:</h3>
                                 <p>Placeholder for a longer description...</p>
                             </div>
-                            <button className="edit-button">Edit Description</button>
+                            <button className="edit-button" onClick={display}>Edit Description</button>
                             <div className="post-container">
                                 <h3>Posts:</h3>
                                 <button className="post-button">Create post</button>

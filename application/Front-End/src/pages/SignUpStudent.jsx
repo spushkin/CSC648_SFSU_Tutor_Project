@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
 function SignUpStudent() {
-	const apiEndpoint = "http://localhost:8003/CreateUser";
+	const localApi = "http://localhost:8003/CreateUser";
+	const api = "http://3.101.225.46:8003/CreateUser"
 	const [formInput, setFormInput] = useState({
-		firstName: "",
-		lastName: "",
+		firstname: "",
+		lastname: "",
 		email: "",
 		username: "",
 		password: "",
@@ -15,8 +16,8 @@ function SignUpStudent() {
 	});
 
 	const [formError, setFormError] = useState({
-		firstName: "",
-		lastName: "",
+		firstname: "",
+		lastname: "",
 		email: "",
 		username: "",
 		password: "",
@@ -28,8 +29,8 @@ function SignUpStudent() {
 
 		// Initializing an object to track errors
 		let formError = {
-			firstName: "",
-			lastName: "",
+			firstname: "",
+			lastname: "",
 			email: "",
 			username: "",
 			password: "",
@@ -37,11 +38,11 @@ function SignUpStudent() {
 		};
 
 		// Checking if values are empty
-		if (!formInput.firstName && !formInput.lastName && !formInput.email && !formInput.username && !formInput.password && !formInput.confirmPass) {
+		if (!formInput.firstname && !formInput.lastname && !formInput.email && !formInput.username && !formInput.password && !formInput.confirmPass) {
 			setFormError({
 				...formError,
-				firstName: "Enter a first name",
-				lastName: "Enter a last name",
+				firstname: "Enter a first name",
+				lastname: "Enter a last name",
 				email: "Enter a valid email address",
 				username: "Enter a student ID",
 				password: "You must enter in a password",
@@ -50,27 +51,27 @@ function SignUpStudent() {
 		}
 
 		// Checking if Full name is empty
-		if (!formInput.firstName && !formInput.lastName) {
+		if (!formInput.firstname && !formInput.lastname) {
 			setFormError({
 				...formError,
-				firstName: "Must enter a first name",
-				lastName: "Must enter a last name"
+				firstname: "Must enter a first name",
+				lastname: "Must enter a last name"
 			});
 			return;
 		}
 
-		if (!formInput.firstName) {
+		if (!formInput.firstname) {
 			setFormError({
 				...formError,
-				firstName: "Must enter a first name",
+				firstname: "Must enter a first name",
 			});
 			return;
 		}
 
-		if (!formInput.lastName) {
+		if (!formInput.lastname) {
 			setFormError({
 				...formError,
-				lastName: "Must enter a last name",
+				lastname: "Must enter a last name",
 			});
 			return;
 		}
@@ -139,11 +140,11 @@ function SignUpStudent() {
 	};
 
 	const testApi = () => {
-		fetch(apiEndpoint, {
+		fetch(api, {
 			method: "POST",
 			body: JSON.stringify({
-				firstName: formInput.firstName,
-				lastName: formInput.lastName,
+				firstname: formInput.firstname,
+				lastname: formInput.lastname,
 				email: formInput.email,
 				username: formInput.username,
 				password: formInput.password,
@@ -173,7 +174,7 @@ function SignUpStudent() {
 						</h1>
 						<div className="name-group sign-group-style ">
 							<div className="sign-group-element">
-								<label className="signup-label" htmlFor="firstName">
+								<label className="signup-label" htmlFor="firstname">
 									<p className="required-field-star">First Name</p>
 								</label>
 
@@ -181,32 +182,32 @@ function SignUpStudent() {
 									onChange={({ target }) => {
 										handleUserInput(target.name, target.value);
 									}}
-									id="firstName"
-									value={formInput.firstName}
+									id="firstname"
+									value={formInput.firstname}
 									className="form-control"
 									type="text"
 									placeholder="First Name"
-									name="firstName"
+									name="firstname"
 								/>
 
-								<p className="error-message">{formError.firstName}</p>
+								<p className="error-message">{formError.firstname}</p>
 							</div>
-							<div className="lastName sign-group-element">
-								<label className="signup-label" htmlFor="lastName">
+							<div className="lastname sign-group-element">
+								<label className="signup-label" htmlFor="lastname">
 									<p className="required-field-star">Last Name</p>
 								</label>
 								<input
 									onChange={({ target }) => {
 										handleUserInput(target.name, target.value);
 									}}
-									id="lastName"
-									value={formInput.lastName}
+									id="lastname"
+									value={formInput.lastname}
 									className="form-control"
 									type="text"
 									placeholder="Last Name"
-									name="lastName"
+									name="lastname"
 								/>
-								<p className="error-message">{formError.lastName}</p>
+								<p className="error-message">{formError.lastname}</p>
 							</div>
 						</div>
 						<div className="form-group sign-group-style sign-group-element">
