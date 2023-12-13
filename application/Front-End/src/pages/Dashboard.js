@@ -21,8 +21,18 @@ function Dashboard() {
     // Placeholder data for chats
     let chatMessages = [];
 
+    const info = JSON.parse(sessionStorage.getItem('user'));
+
+    const first = info[0].Firstname;
+    const last = info[0].Lastname;
+    const email = info[0].Email;
+
+    const fullname = first + " " + last;
+
     const display = () => {
-        console.log(sessionStorage);
+        
+        console.log(info);
+
     }
 
     const getActiveClass = (tabName) => activeTab === tabName ? 'active' : '';
@@ -31,6 +41,37 @@ function Dashboard() {
 
     const [options, setOptions] = useState([]);
   	const [selectedOption, setSelectedOption] = useState('');
+    let isTutor = false;
+    const tutorEmailApi = "http://3.101.225.46:8003/GetTutorByEmail";
+
+    const [bool, setBool] = useState({});
+
+    useEffect(() => {
+          let handleEmail = async () => {
+            try {
+                const response = await fetch(tutorEmailApi, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        "email": email,
+                    }),
+                })
+                    .then(response => response.text())
+                    .then(result => {
+                        console.log("Here are results: " + result)
+                        if (result) {
+                            setBool({ bool: 'true' });
+                        }
+                    })
+                    .catch(error => console.log('error', error));
+            } catch (e) {
+                console.log(e);
+            }
+        };
+        handleEmail();
+    }, []);
 
     useEffect(() => {
 		// Fetch dynamic data (replace this with your data-fetching logic)
@@ -46,12 +87,10 @@ function Dashboard() {
                 })
             });
 
-            console.log("herer goes a error");
-
 			const data = await response.json();
 			
             chatMessages = data;
-            console.log(chatMessages);
+            console.log(chatMessages);  
             setOptions(data);
 		  } catch (error) {
 			console.error('Error fetching options:', error);
@@ -59,12 +98,6 @@ function Dashboard() {
 		};
         fetchData();
     }, []);
-
-    let isTutor = false
-
-    if (isTutor) {
-        isTutor = true;
-    }
 
     return (
         <div>
@@ -99,7 +132,7 @@ function Dashboard() {
                             <img src={placeholderImage} alt="Profile" className="profile-image" />
                             <div className="profile-info">
                                 <h3>Name:</h3>
-                                <p></p>
+                                <p>{fullname}</p>
                                 {isTutor ? (
                                     <>
                                     <h3>Title:</h3>
