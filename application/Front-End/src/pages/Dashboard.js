@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import NavMenu from './NavMenu';
 import placeholderImage from '../images/sillouette.jpg';
@@ -16,38 +16,46 @@ function Dashboard() {
         { id: 3, title: 'Media 4', image: placeholderMedia },
     ];
     // Placeholder data for chats
-    const chatMessages = [
-        {
-            id: 1,
-            name: "Student Name",
-            message: "Last message text here...",
-            time: "13:00",
-            image: placeholderImage
-        },
-        {
-            id: 3,
-            name: "Student Name",
-            message: "Last message text here...",
-            time: "12:45",
-            image: placeholderImage
-        },
-        {
-            id: 4,
-            name: "Student Name",
-            message: "Last message text here...",
-            time: "12:30",
-            image: placeholderImage
-        },
-        {
-            id: 5,
-            name: "Student Name",
-            message: "Last message text here...",
-            time: "08:00",
-            image: placeholderImage
-        }
-    ];
+    let chatMessages = [];
+
+    const display = () => {
+        console.log(sessionStorage);
+    }
 
     const getActiveClass = (tabName) => activeTab === tabName ? 'active' : '';
+
+    const messageApi = "http://localhost:8003/getMessage";
+
+    const [options, setOptions] = useState([]);
+  	const [selectedOption, setSelectedOption] = useState('');
+
+    useEffect(() => {
+		// Fetch dynamic data (replace this with your data-fetching logic)
+		const fetchData = async () => {
+		  try {
+			const response = await fetch(messageApi, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+                body: JSON.stringify({
+                    id: JSON.parse(sessionStorage.getItem('user'))[0].id,
+                })
+            });
+
+            console.log("herer goes a error");
+
+			const data = await response.json();
+			
+            chatMessages = data;
+            console.log(chatMessages);
+            setOptions(data);
+		  } catch (error) {
+			console.error('Error fetching options:', error);
+		  }
+		};
+        fetchData();
+    }, []);
 
     return (
         <div>
@@ -90,14 +98,16 @@ function Dashboard() {
                                 <h3>Description:</h3>
                                 <p>Placeholder for a longer description...</p>
                             </div>
-                            <button className="edit-button">Edit Description</button>
+                            <button className="edit-button" onClick={display}>Edit Description</button>
                             <div className="post-container">
                                 <h3>Posts:</h3>
                                 <button className="post-button">Create post</button>
 
                                 <div className="createpost-window">
                                     <h3>Enter post details:</h3>
-                                    <textarea placeholder="Limit to 500 Characters"></textarea>
+                                    <div className="text-box">
+                                        <textarea placeholder="Limit to 500 Characters"></textarea>
+                                    </div>
                                     <button className="post-button">Submit request</button>
                                 </div>
 
@@ -171,14 +181,15 @@ function Dashboard() {
                             <h2 className="messages-title">Messages</h2>
                             {chatMessages.map(chat => (
                                 <div key={chat.id} className="chat-item">
-                                    <img src={chat.image} alt={chat.name} className="chat-image" />
+                                    <img src={placeholderImage} className="chat-image" />
                                     <div className="chat-info">
-                                        <div className="chat-name">{chat.name}</div>
-                                        <div className="chat-message">{chat.message}</div>
+                                        <div className="chat-name">{chat.SenderId}</div>
+                                        <div className="chat-message">{chat}</div>
                                     </div>
-                                    <div className="chat-time">{chat.time}</div>
+                                    <div className="chat-time">{chat.createdtime}</div>
                                 </div>
                             ))}
+                            
                         </div>
                     )}
                 </div>
