@@ -1,18 +1,20 @@
 // Import any necessary modules or dependencies
-const searchTutors = require("../Services/SearchTutors");
-const createUser = require("../Services/CreateUser");
-const getUser = require("../Services/GetUser");
-const createTutor = require("../Services/CreateTutor");
-const getTutor = require("../Services/GetTutor");
-const getTutorByEmail = require("../Services/GetTutorbyEmail");
-const createMessage = require("../Services/CreateMessage");
-const getMessage = require("../Services/GetMessage");
-const getTopic = require("../Services/GetTopic");
-const createTopic = require("../Services/CreateTopic");
-const createCategory = require("../Services/CreateCategory");
-const getCategory = require("../Services/GetCategory");
-// const bycrypt = require("bcryptjs");
+const searchTutors = require('../Services/SearchTutors');
+const createUser = require('../Services/CreateUser');
+const getUser = require('../Services/GetUser');
+const createTutor = require('../Services/CreateTutor');
+const getTutor = require('../Services/GetTutor');
+const getTutorByEmail = require('../Services/GetTutorbyEmail');
+const createMessage = require('../Services/CreateMessage');
+const getMessage = require('../Services/GetMessage');
+const getTopic = require('../Services/GetTopic');
+const createTopic = require('../Services/CreateTopic');
+const createCategory = require('../Services/CreateCategory');
+const getCategory = require('../Services/GetCategory');
 
+const bycrypt = require('bcryptjs');
+const multer = require('multer');
+const upload = multer({ dest: '../../Public/TutorFiles' });
 // Define the exported function
 exports.getTutors = async (subject, searchText) => {
 	try {
@@ -68,33 +70,17 @@ exports.getUser = async (email, password) => {
 };
 
 // Define the exported function
-exports.createTutor = async (
-	name,
-	email,
-	topicId,
-	cv,
-	description,
-	photo,
-	schedule
-) => {
-	try {
-		// Retrieve all tutors from the database
-		let user;
-		user = await createTutor(
-			name,
-			email,
-			topicId,
-			cv,
-			description,
-			photo,
-			schedule
-		);
-		return user;
-	} catch (error) {
-		// Handle any errors that occur
-		console.error(error);
-		return error;
-	}
+exports.createTutor = async (name, email, topicId, cv, description, photo, schedule="") => {
+    try {
+        // Retrieve all tutors from the database
+        let user;
+        user = await createTutor(name, email, topicId, cv, description, photo, schedule);
+        return user;
+    } catch (error) {
+        // Handle any errors that occur
+        console.error(error);
+      return error;
+    }
 };
 
 // Define the exported function
