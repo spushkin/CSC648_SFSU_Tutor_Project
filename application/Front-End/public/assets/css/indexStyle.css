@@ -308,4 +308,10 @@ textarea {
   .sp{
 	background-color: transparent;
 	border: 1px blackR;
+	float:left;
+  }
+
+  .ChatSection{
+	display: block;
+	float:right;
   }
