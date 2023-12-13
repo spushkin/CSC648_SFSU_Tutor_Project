@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 import NavMenu from './NavMenu';
 import placeholderImage from '../images/sillouette.jpg';
@@ -52,6 +52,36 @@ function Dashboard() {
     }
 
     const getActiveClass = (tabName) => activeTab === tabName ? 'active' : '';
+
+    const [options, setOptions] = useState([]);
+  	const [selectedOption, setSelectedOption] = useState('');
+    const messageApi = "http://3.101.225.46:8003/getMessage";
+
+    useEffect(() => {
+		// Fetch dynamic data (replace this with your data-fetching logic)
+		const fetchData = async () => {
+		  try {
+			const response = await fetch(messageApi, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+                body: JSON.stringify({
+                    id: JSON.parse(sessionStorage.getItem('user'))[0].id,
+                })
+            });
+
+            console.log("herer goes a error");
+
+			const data = await response.json();
+			console.log(data);
+			setOptions(data);
+		  } catch (error) {
+			console.error('Error fetching options:', error);
+		  }
+		};
+        fetchData();
+    }, []);
 
     return (
         <div>
