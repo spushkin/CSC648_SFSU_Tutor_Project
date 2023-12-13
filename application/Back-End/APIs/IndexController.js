@@ -11,7 +11,7 @@ const getTopic = require("../Services/GetTopic");
 const createTopic = require("../Services/CreateTopic");
 const createCategory = require("../Services/CreateCategory");
 const getCategory = require("../Services/GetCategory");
-const bycrypt = require("bcryptjs");
+// const bycrypt = require("bcryptjs");
 
 // Define the exported function
 exports.getTutors = async (subject, searchText) => {
@@ -39,13 +39,7 @@ exports.createUser = async (firstname, lastname, username, email, password) => {
 		// Retrieve all tutors from the database
 		let user;
 
-		user = await createUser(
-			firstname,
-			lastname,
-			email,
-			email,
-			bycrypt.hashSync(password, 10)
-		);
+		user = await createUser(firstname, lastname, email, email, password);
 
 		// Send the tutors as a response
 		return user;
@@ -62,8 +56,7 @@ exports.getUser = async (email, password) => {
 		// Retrieve user from the database
 		let user = await getUser(email);
 
-		// if (user[0] && user[0].Password === hashedPassword) {
-		if (user[0] && user[0].Password) {
+		if (user[0] && user[0].Password === password) {
 			return user[0];
 		} else {
 			return false;
