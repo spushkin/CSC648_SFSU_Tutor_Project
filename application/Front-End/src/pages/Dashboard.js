@@ -90,7 +90,65 @@ function Dashboard() {
                                 <h3>Description:</h3>
                                 <p>Placeholder for a longer description...</p>
                             </div>
-                            <button className="edit-button">Edit Profile</button>
+                            <button className="edit-button">Edit Description</button>
+                            <div className="post-container">
+                                <h3>Posts:</h3>
+                                <button className="post-button">Create post</button>
+
+                                <div className="createpost-window">
+                                    <h3>Enter post details:</h3>
+                                    <textarea placeholder="Limit to 500 Characters"></textarea>
+                                    <button className="post-button">Submit request</button>
+                                </div>
+
+                                <div className="post-title">
+                                    <div className="posts">
+                                        <p className="center"><b>Name of User</b></p>
+                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
+
+                                    </div>
+                                    <div className="posts">
+                                    <p className="center"><b>Name of User</b></p>
+                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
+
+                                    </div>
+                                    <div className="posts">
+                                    <p className="center"><b>Name of User</b></p>
+                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
+
+                                    </div>
+                                    <div className="posts">
+                                    <p className="center"><b>Name of User</b></p>
+                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
+
+                                    </div>
+                                    <div className="posts">
+                                    <p className="center"><b>Name of User</b></p>
+                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
+
+                                    </div>
+                                    <div className="posts">
+                                    <p className="center"><b>Name of User</b></p>
+                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
+
+                                    </div>
+                                    <div className="posts">
+                                    <p className="center"><b>Name of User</b></p>
+                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
+
+                                    </div>
+                                    <div className="posts">
+                                    <p className="center"><b>Name of User</b></p>
+                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
+
+                                    </div>
+                                    <div className="posts">
+                                    <p className="center"><b>Name of User</b></p>
+                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     )}
                     {activeTab === 'media' && (
