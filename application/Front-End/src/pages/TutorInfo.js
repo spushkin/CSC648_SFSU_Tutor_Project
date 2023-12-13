@@ -14,9 +14,18 @@ const result = useLocation();
         { id: 2, title: 'Media 3', image: placeholderMedia },
         { id: 3, title: 'Media 4', image: placeholderMedia },
     ];
+
+
 	const routeChange = () => {
 		let path = `/`;
 		navigate(path);
+	};
+    const messages = () => {
+        let sent = document.getElementById("msg").value
+        console.log("Ready to be send message: " + sent)
+        document.getElementById("msg").style.display="none";
+        document.getElementById("reachButton2").innerText = "SENT!";
+        document.getElementById("but").style.display="none";
 	};
     return (
         <Fragment>
@@ -42,9 +51,16 @@ const result = useLocation();
                             <br/>
                             
                         </div>
-                            <button className="reachButton"onClick={routeChange} >
+                            <button id="but" className="reachButton"onClick={messages} >
                                         Get in Contact 
                             </button>
+
+                            <div id="reachButton2" className="reachButton2">
+                                <textarea id="msg" className="sp" rows="4" cols="33">
+                                Hello Tutor...
+                                </textarea>
+                            </div>
+
                     </div>
                    
             </div>
@@ -63,7 +79,7 @@ const result = useLocation();
                  
                     </div>
 
-
+                    
             </div>
         </Fragment>
     )
