@@ -14,10 +14,37 @@ const result = useLocation();
         { id: 2, title: 'Media 3', image: placeholderMedia },
         { id: 3, title: 'Media 4', image: placeholderMedia },
     ];
+
 	const routeChange = () => {
 		let path = `/`;
 		navigate(path);
 	};
+    const messages = () => {
+        let sent = document.getElementById("msg").value
+        const api = "http://localhost:8003/CreateMessage"
+        let recieveID = document.getElementById("RecieverID").value
+        const response = fetch(api, {
+			method: "POST",
+			body: JSON.stringify({
+				SenderId: JSON.parse(sessionStorage.getItem('user'))[0].id,
+                RecevierId: recieveID,
+                Text: sent,
+			}),
+			headers: {
+				"Content-type": "application/json; charset=UTF-8",
+			},
+		}).then((response) => {
+			console.log(response.status);
+		});
+
+        
+        console.log("Ready to be send message: " + sent)
+        document.getElementById("msg").style.display="none";
+        
+        document.getElementById("but").style.display="none";
+        document.getElementById("reachButton2").innerText = "SENT!";
+	};
+
     return (
         <Fragment>
             <NavMenu />
@@ -42,9 +69,19 @@ const result = useLocation();
                             <br/>
                             
                         </div>
-                            <button className="reachButton"onClick={routeChange} >
+                        <div className = "ChatSection">
+                            <div id="reachButton2" className="reachButton2">
+                            <button id="but" className="reachButton" onClick={messages} >
                                         Get in Contact 
                             </button>
+                            
+                            <input type="hidden" name="RecieverID" id="RecieverID" value={result.state.id}></input>
+
+                                <textarea id="msg" className="sp" rows="4" cols="33">
+                                Hello Tutor...
+                                </textarea>
+                            </div>
+                        </div>
                     </div>
                    
             </div>
@@ -63,7 +100,7 @@ const result = useLocation();
                  
                     </div>
 
-
+                    
             </div>
         </Fragment>
     )

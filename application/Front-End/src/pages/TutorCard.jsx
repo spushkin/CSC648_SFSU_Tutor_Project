@@ -13,7 +13,8 @@ function TutorCard({ result }) {
 			email: result.Email,
 			sched: result.Schedule, 
 			 topics: result.Topicid,
-			Photo: tutorsRoute+result.Photo}
+			Photo: tutorsRoute+result.Photo,
+			id: result.Id}
           });
 	};
 

@@ -1,10 +1,12 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function SearchBar({ setResults }) {
 	const [input, setInput] = useState("");
 	const [sub, setSub] = useState("all");
 	const [clicked, setClicked] = useState(false);
+	const [options, setOptions] = useState([]);
+  	const [selectedOption, setSelectedOption] = useState('');
 
 	// fetch("3.101.225.46/getTutors", {
 	// 	method: "POST",
@@ -73,21 +75,48 @@ function SearchBar({ setResults }) {
 			}
 	};
 
+	const topicApi = "http://3.101.225.46:8003/getTopic";
+
+	useEffect(() => {
+		// Fetch dynamic data (replace this with your data-fetching logic)
+		const fetchData = async () => {
+		  try {
+			const response = await fetch(topicApi, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				}});
+			const data = await response.json();
+			console.log(data);
+			setOptions(data);
+		  } catch (error) {
+			console.error('Error fetching options:', error);
+		  }
+		};
+	
+		fetchData();
+	  }, []);
+
+	  const handleTopicChange = (event) => {
+		setSelectedOption(event.target.value);
+	  };
+
 	return (
 		<Fragment>
 			<div className="searchBar">
 				<form action="" id="searchForm" onSubmit={(e) => e.preventDefault()}>
-					<select 
-						name="searchFormSelect"
-						id="searchFormSelect"
-						form="searchForm"
-						className="dropDownBox"
-
-					>
-						<option value="all">All</option>
-						<option value="math">Math</option>
-						<option value="physics">Physics</option>
-						<option value="history">History</option>
+					<select id="searchFormSelect" name="searchFormSelect">
+						<option value="value" disabled>
+							Select an option
+						</option>
+						<option value="all">
+							All
+						</option>
+						{options.map((option) => (
+							<option key={option.Name} value={option.Name}>
+								{option.Name}
+							</option>
+						))}
 					</select>
 					<input
 						size="37"
