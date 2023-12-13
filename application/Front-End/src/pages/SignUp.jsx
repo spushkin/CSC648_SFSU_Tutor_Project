@@ -124,7 +124,7 @@ function SignUp() {
 		const newdata = { ...formInput };
 		newdata[event.target.id] = event.target.value;
 		setFormInput(newdata);
-		console.log(newdata)
+		console.log('newdata',newdata)
 
 		setFormInput((prevState) => ({
 			...prevState,
@@ -281,14 +281,7 @@ function SignUp() {
 									placeholder="Confirm Password"
 									name="confirmPass"
 								/>
-								<p className="error-message">{formError.confirmPass}</p>
-								<p className="success-message">{formInput.successMsg}</p>
-							</div>
-							<div className="text-area sign-group-element">
-								<label className="search-keys" htmlFor="searchKeys">
-									Search keys
-								</label>
-								<textarea></textarea>
+								
 							</div>
 							<div className="text-area sign-group-element">
 								<label className="description" htmlFor="descriptionText">
@@ -328,6 +321,8 @@ function SignUp() {
 									Sign Up
 								</button>
 							</div>
+							<p className="error-message">{formError.confirmPass}</p>
+								<p className="success-message">{formInput.successMsg}</p>
 						</div>
 					</form>
 				</div>

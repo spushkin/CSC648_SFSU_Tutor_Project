@@ -18,6 +18,7 @@ const queries = {
     getTutorByEmail: `SELECT * FROM Tutor WHERE Email= ?`,
     createMessage: `INSERT INTO Message (SenderId, RecevierId, Text) VALUES(?,?,?)`,
     getMessage: `SELECT * FROM Message m WHERE RecevierId=?`,
+    getMessageBySender:  `SELECT * FROM Message m WHERE SenderId=?`,
     getTopic: `SELECT * FROM Topic`,
     createTopic: `INSERT INTO Topic (Name, CategoryID, Description) VALUES(?, ?, ?)`,
     createCategory: `INSERT INTO Category (Name, Description) VALUES (?, ?)`,
