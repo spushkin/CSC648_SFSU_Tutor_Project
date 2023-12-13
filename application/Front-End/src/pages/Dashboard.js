@@ -16,36 +16,7 @@ function Dashboard() {
         { id: 3, title: 'Media 4', image: placeholderMedia },
     ];
     // Placeholder data for chats
-    const chatMessages = [
-        {
-            id: 1,
-            name: "Student Name",
-            message: "Last message text here...",
-            time: "13:00",
-            image: placeholderImage
-        },
-        {
-            id: 3,
-            name: "Student Name",
-            message: "Last message text here...",
-            time: "12:45",
-            image: placeholderImage
-        },
-        {
-            id: 4,
-            name: "Student Name",
-            message: "Last message text here...",
-            time: "12:30",
-            image: placeholderImage
-        },
-        {
-            id: 5,
-            name: "Student Name",
-            message: "Last message text here...",
-            time: "08:00",
-            image: placeholderImage
-        }
-    ];
+    let chatMessages = [];
 
     const display = () => {
         console.log(sessionStorage);
@@ -53,9 +24,10 @@ function Dashboard() {
 
     const getActiveClass = (tabName) => activeTab === tabName ? 'active' : '';
 
+    const messageApi = "http://localhost:8003/getMessage";
+
     const [options, setOptions] = useState([]);
   	const [selectedOption, setSelectedOption] = useState('');
-    const messageApi = "http://localhost:8003/getMessage";
 
     useEffect(() => {
 		// Fetch dynamic data (replace this with your data-fetching logic)
@@ -74,8 +46,10 @@ function Dashboard() {
             console.log("herer goes a error");
 
 			const data = await response.json();
-			console.log(data);
-			setOptions(data);
+			
+            chatMessages = data;
+            console.log(chatMessages);
+            setOptions(data);
 		  } catch (error) {
 			console.error('Error fetching options:', error);
 		  }
@@ -209,12 +183,13 @@ function Dashboard() {
                                 <div key={chat.id} className="chat-item">
                                     <img src={placeholderImage} className="chat-image" />
                                     <div className="chat-info">
-                                        <div className="chat-name">{chat.name}</div>
-                                        <div className="chat-message">{chat.text}</div>
+                                        <div className="chat-name">{chat.SenderId}</div>
+                                        <div className="chat-message">{chat}</div>
                                     </div>
                                     <div className="chat-time">{chat.createdtime}</div>
                                 </div>
                             ))}
+                            
                         </div>
                     )}
                 </div>
