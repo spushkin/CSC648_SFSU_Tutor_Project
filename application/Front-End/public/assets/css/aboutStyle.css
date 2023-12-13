@@ -145,6 +145,15 @@
 	margin-top: 31%;
 	font-size: 16pt;
 }
+.reachButton2{
+	background-color: rgba(255, 255, 255, 0.781);
+	margin-right: 20px;
+	float: right;
+	width: 250px;
+	height: 100px;
+	margin-top: 31%;
+	font-size: 16pt;
+}
 .mediaColumn {
 	font-size: 20pt;
 	float: left;
