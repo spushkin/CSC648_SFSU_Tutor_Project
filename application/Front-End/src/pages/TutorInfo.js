@@ -21,13 +21,13 @@ const result = useLocation();
 	};
     const messages = () => {
         let sent = document.getElementById("msg").value
-        const api = "http://3.101.225.46:8003/CreateMessage"
+        const api = "http://localhost:8003/CreateMessage"
         let recieveID = document.getElementById("RecieverID").value
         const response = fetch(api, {
 			method: "POST",
 			body: JSON.stringify({
-				SenderId: recieveID,
-                RecevierId: JSON.parse(sessionStorage.getItem('user'))[0].id,
+				SenderId: JSON.parse(sessionStorage.getItem('user'))[0].id,
+                RecevierId: recieveID,
                 Text: sent,
 			}),
 			headers: {
