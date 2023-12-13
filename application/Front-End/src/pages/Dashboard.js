@@ -14,9 +14,9 @@ function Dashboard() {
     // Placeholder data for the media items
     const mediaItems = [
         { id: 0, title: 'Media 1', image: placeholderMedia },
-        { id: 1, title: 'Media 2', image: placeholderMedia },
-        { id: 2, title: 'Media 3', image: placeholderMedia },
-        { id: 3, title: 'Media 4', image: placeholderMedia },
+        // { id: 1, title: 'Media 2', image: placeholderMedia },
+        // { id: 2, title: 'Media 3', image: placeholderMedia },
+        // { id: 3, title: 'Media 4', image: placeholderMedia },
     ];
     // Placeholder data for chats
     let chatMessages = [];
@@ -38,16 +38,21 @@ function Dashboard() {
     const getActiveClass = (tabName) => activeTab === tabName ? 'active' : '';
 
     const messageApi = "http://localhost:8003/getMessage";
+    const messageApiForSender = "http://localhost:8003/getMessageBySender";
 
     const [options, setOptions] = useState([]);
   	const [selectedOption, setSelectedOption] = useState('');
     let isTutor = false;
+  
     const tutorEmailApi = "http://3.101.225.46:8003/GetTutorByEmail";
 
-    const [bool, setBool] = useState({});
+    const [isTutorBool, setisTutorBool] = useState({});
+
+   
 
     useEffect(() => {
-          let handleEmail = async () => {
+        console.log("123");
+        let handleEmail = async () => {
             try {
                 const response = await fetch(tutorEmailApi, {
                     method: "POST",
@@ -60,9 +65,16 @@ function Dashboard() {
                 })
                     .then(response => response.text())
                     .then(result => {
-                        console.log("Here are results: " + result)
+                       
+                        // result = JSON.parse(result);
+                        console.log("Here are results12: " + result);
                         if (result) {
-                            setBool({ bool: 'true' });
+                            console.log("is a tutor");
+                            // setBool({ isTutorBool: 'true' });
+                            // isTutor = true;
+                            sessionStorage.setItem('isTutor', 'true');
+                        } else {
+                            sessionStorage.setItem('isTutor', 'false');
                         }
                     })
                     .catch(error => console.log('error', error));
@@ -70,12 +82,10 @@ function Dashboard() {
                 console.log(e);
             }
         };
-        handleEmail();
-    }, []);
-
-    useEffect(() => {
+        
 		// Fetch dynamic data (replace this with your data-fetching logic)
-		const fetchData = async () => {
+        console.log("herer goes a error2");
+		const fetchMessage = async () => {
 		  try {
 			const response = await fetch(messageApi, {
 				method: "POST",
@@ -96,7 +106,32 @@ function Dashboard() {
 			console.error('Error fetching options:', error);
 		  }
 		};
-        fetchData();
+        const fetchMessageBySender = async () => {
+            try {
+              const response = await fetch(messageApiForSender, {
+                  method: "POST",
+                  headers: {
+                      "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                      id: JSON.parse(sessionStorage.getItem('user'))[0].id,
+                  })
+              });
+  
+              const data = await response.json();
+              
+              chatMessages = data;
+              console.log('sender',chatMessages);  
+              setOptions(data);
+            } catch (error) {
+              console.error('Error fetching options:', error);
+            }
+          };
+          handleEmail();
+          if(sessionStorage.getItem('isTutor') === 'true')
+            fetchMessage();
+        else
+            fetchMessageBySender();
     }, []);
 
     return (

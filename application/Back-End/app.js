@@ -115,6 +115,13 @@ app.post("/getMessage", bodyParser.json(), async (req, res) => {
   const results = await indexController.getMessage(id);
   res.send(results);
 });
+
+app.post("/getMessageBySender", bodyParser.json(), async (req, res) => {
+  const { id } = req.body;
+  const results = await indexController.getMessageBySender(id);
+  res.send(results);
+});
+
 app.post("/getTopic", bodyParser.json(), async (req, res) => {
   const results = await indexController.getTopic();
   res.send(results);

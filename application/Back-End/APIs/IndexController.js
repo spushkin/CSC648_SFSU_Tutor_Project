@@ -7,6 +7,7 @@ const getTutor = require('../Services/GetTutor');
 const getTutorByEmail = require('../Services/GetTutorbyEmail');
 const createMessage = require('../Services/CreateMessage');
 const getMessage = require('../Services/GetMessage');
+const getMessageBySender = require('../Services/GetMessageBySender');
 const getTopic = require('../Services/GetTopic');
 const createTopic = require('../Services/CreateTopic');
 const createCategory = require('../Services/CreateCategory');
@@ -132,6 +133,20 @@ exports.getMessage = async (id) => {
 		// Retrieve all tutors from the database
 		let user;
 		user = await getMessage(id);
+
+		return user;
+	} catch (error) {
+		// Handle any errors that occur
+		console.error(error);
+		return error;
+	}
+};
+
+exports.getMessageBySender = async (id) => {
+	try {
+		// Retrieve all tutors from the database
+		let user;
+		user = await getMessageBySender(id);
 
 		return user;
 	} catch (error) {
