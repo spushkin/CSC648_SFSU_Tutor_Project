@@ -24,8 +24,9 @@ const result = useLocation();
         let sent = document.getElementById("msg").value
         console.log("Ready to be send message: " + sent)
         document.getElementById("msg").style.display="none";
-        document.getElementById("reachButton2").innerText = "SENT!";
+        
         document.getElementById("but").style.display="none";
+        document.getElementById("reachButton2").innerText = "SENT!";
 	};
     return (
         <Fragment>
@@ -51,16 +52,17 @@ const result = useLocation();
                             <br/>
                             
                         </div>
+                        <div className = "ChatSection">
+                            <div id="reachButton2" className="reachButton2">
                             <button id="but" className="reachButton"onClick={messages} >
                                         Get in Contact 
                             </button>
-
-                            <div id="reachButton2" className="reachButton2">
+                            
                                 <textarea id="msg" className="sp" rows="4" cols="33">
                                 Hello Tutor...
                                 </textarea>
                             </div>
-
+                        </div>
                     </div>
                    
             </div>
