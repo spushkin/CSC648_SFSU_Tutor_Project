@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
 function SignUpStudent() {
-	const apiEndpoint = 'http://localhost:8003/CreateUser'
+	const apiEndpoint = "http://localhost:8003/CreateUser";
 	const [formInput, setFormInput] = useState({
-		firstName: "",
+		firstname: "",
 		lastName: "",
 		email: "",
 		studentID: "",
 		password: "",
-		confirmPass: ""
-	})
+		confirmPass: "",
+	});
 
 	const [formError, setFormError] = useState({
 		firstName: "",
@@ -20,8 +20,8 @@ function SignUpStudent() {
 		email: "",
 		studentID: "",
 		password: "",
-		confirmPass: ""
-	})
+		confirmPass: "",
+	});
 
 	async function validateFormInput(event) {
 		event.preventDefault();
@@ -33,11 +33,18 @@ function SignUpStudent() {
 			email: "",
 			studentID: "",
 			password: "",
-			confirmPass: ""
+			confirmPass: "",
 		};
 
 		// Checking if values are empty
-		if (!formInput.firstName && !formInput.lastName && !formInput.email && !formInput.studentID && !formInput.password && !formInput.confirmPass) {
+		if (
+			!formInput.firstName &&
+			!formInput.lastName &&
+			!formInput.email &&
+			!formInput.studentID &&
+			!formInput.password &&
+			!formInput.confirmPass
+		) {
 			setFormError({
 				...formError,
 				firstName: "Enter a first name",
@@ -54,7 +61,7 @@ function SignUpStudent() {
 			setFormError({
 				...formError,
 				firstName: "Must enter a first name",
-				lastName: "Must enter a last name"
+				lastName: "Must enter a last name",
 			});
 			return;
 		}
@@ -83,12 +90,12 @@ function SignUpStudent() {
 			});
 			return;
 		}
-		
+
 		// Checking if student id is empty
 		if (!formInput.studentID) {
 			setFormError({
 				...formError,
-				studentID: "Student ID should not be empty"
+				studentID: "Student ID should not be empty",
 			});
 			return;
 		}
@@ -106,14 +113,14 @@ function SignUpStudent() {
 		if (formInput.confirmPass !== formInput.password) {
 			setFormError({
 				...formError,
-				confirmPass: "Password and confirm password should be matching!"
+				confirmPass: "Password and confirm password should be matching!",
 			});
 			return;
 		}
 
 		// Clear any previous errors
 		setFormError(formError);
-		const newdata = {...formInput}
+		const newdata = { ...formInput };
 		newdata[event.target.id] = event.target.value;
 		setFormInput(newdata);
 
@@ -139,8 +146,8 @@ function SignUpStudent() {
 	};
 
 	const testApi = () => {
-        fetch(apiEndpoint, {
-			method: 'POST',
+		fetch(apiEndpoint, {
+			method: "POST",
 			body: JSON.stringify({
 				firstName: formInput.firstName,
 				lastName: formInput.lastName,
@@ -149,11 +156,12 @@ function SignUpStudent() {
 				password: formInput.password,
 			}),
 			headers: {
-				'Content-type': 'application/json; charset=UTF-8',
+				"Content-type": "application/json; charset=UTF-8",
 			},
-		}).then(response => console.log(response.status))
-    };
-
+		}).then((response) => {
+			console.log(response.status);
+		});
+	};
 
 	return (
 		<Fragment>
@@ -178,7 +186,7 @@ function SignUpStudent() {
 
 								<input
 									onChange={({ target }) => {
-										handleUserInput(target.name, target.value)
+										handleUserInput(target.name, target.value);
 									}}
 									id="firstName"
 									value={formInput.firstName}
@@ -196,7 +204,7 @@ function SignUpStudent() {
 								</label>
 								<input
 									onChange={({ target }) => {
-										handleUserInput(target.name, target.value)
+										handleUserInput(target.name, target.value);
 									}}
 									id="lastName"
 									value={formInput.lastName}
@@ -214,8 +222,8 @@ function SignUpStudent() {
 							</label>
 							<input
 								onChange={({ target }) => {
-									handleUserInput(target.name, target.value)
-								}} 
+									handleUserInput(target.name, target.value);
+								}}
 								id="email"
 								value={formInput.email}
 								className="form-control"
@@ -231,7 +239,7 @@ function SignUpStudent() {
 							</label>
 							<input
 								onChange={({ target }) => {
-									handleUserInput(target.name, target.value)
+									handleUserInput(target.name, target.value);
 								}}
 								id="studentID"
 								value={formInput.studentID}
@@ -249,8 +257,8 @@ function SignUpStudent() {
 								</label>
 								<input
 									onChange={({ target }) => {
-										handleUserInput(target.name, target.value)
-									}} 
+										handleUserInput(target.name, target.value);
+									}}
 									id="password"
 									value={formInput.password}
 									className="form-control"
@@ -266,8 +274,8 @@ function SignUpStudent() {
 								</label>
 								<input
 									onChange={({ target }) => {
-										handleUserInput(target.name, target.value)
-									}} 
+										handleUserInput(target.name, target.value);
+									}}
 									id="confirmPass"
 									value={formInput.confirmPass}
 									className="form-control"
@@ -301,7 +309,9 @@ function SignUpStudent() {
 									Sign Up
 								</button>
 							</div>
-							<Link to="/Signin" className="signIn">Have an account? Sign In</Link>
+							<Link to="/Signin" className="signIn">
+								Have an account? Sign In
+							</Link>
 						</div>
 					</form>
 				</div>
