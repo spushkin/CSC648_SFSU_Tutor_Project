@@ -4,23 +4,23 @@ import Footer from "./Footer";
 import Dropdown from "./Dropdown";
 
 function SignUp() {
-	const api = "http://3.101.225.46:3000/createTutor";
-	const localApi = "localhost:8003/createTutor"; //temp
+	const localApi = "http://localhost:8003/createUser"; //temp
+	const api = "http://3.101.225.46:3000/createUser";
 
 	const [formInput, setFormInput] = useState({
-		firstName: "",
-		lastName: "",
+		firstname: "",
+		lastname: "",
 		email: "",
-		studentID: "",
+		username: "",
 		password: "",
 		confirmPass: "",
 	});
 
 	const [formError, setFormError] = useState({
-		firstName: "",
-		lastName: "",
+		firstname: "",
+		lastname: "",
 		email: "",
-		studentID: "",
+		username: "",
 		password: "",
 		confirmPass: "",
 	});
@@ -29,56 +29,56 @@ function SignUp() {
 		event.preventDefault();
 
 		let formError = {
-			firstName: "",
-			lastName: "",
+			firstname: "",
+			lastname: "",
 			email: "",
-			studentID: "",
+			username: "",
 			password: "",
 			confirmPass: "",
 		};
 
 		// Checking if values are empty
 		if (
-			!formInput.firstName &&
-			!formInput.lastName &&
+			!formInput.firstname &&
+			!formInput.lastname &&
 			!formInput.email &&
-			!formInput.studentID &&
+			!formInput.username &&
 			!formInput.password &&
 			!formInput.confirmPass
 		) {
 			setFormError({
 				...formError,
-				firstName: "Enter a first name",
-				lastName: "Enter a last name",
+				firstname: "Enter a first name",
+				lastname: "Enter a last name",
 				email: "Enter a valid email address",
-				studentID: "Enter a student ID",
+				username: "Enter a student ID",
 				password: "You must enter in a password",
 			});
 			return;
 		}
 
 		// Checking if Full name is empty
-		if (!formInput.firstName && !formInput.lastName) {
+		if (!formInput.firstname && !formInput.lastname) {
 			setFormError({
 				...formError,
-				firstName: "Must enter a first name",
-				lastName: "Must enter a last name",
+				firstname: "Must enter a first name",
+				lastname: "Must enter a last name",
 			});
 			return;
 		}
 
-		if (!formInput.firstName) {
+		if (!formInput.firstname) {
 			setFormError({
 				...formError,
-				firstName: "Must enter a first name",
+				firstname: "Must enter a first name",
 			});
 			return;
 		}
 
-		if (!formInput.lastName) {
+		if (!formInput.lastname) {
 			setFormError({
 				...formError,
-				lastName: "Must enter a last name",
+				lastname: "Must enter a last name",
 			});
 			return;
 		}
@@ -93,10 +93,10 @@ function SignUp() {
 		}
 
 		// Checking if student id is empty
-		if (!formInput.studentID) {
+		if (!formInput.username) {
 			setFormError({
 				...formError,
-				studentID: "Student ID should not be empty",
+				username: "Student ID should not be empty",
 			});
 			return;
 		}
@@ -124,6 +124,7 @@ function SignUp() {
 		const newdata = { ...formInput };
 		newdata[event.target.id] = event.target.value;
 		setFormInput(newdata);
+		console.log(newdata)
 
 		setFormInput((prevState) => ({
 			...prevState,
@@ -141,13 +142,13 @@ function SignUp() {
 	};
 
 	async function createTutor() {
-		const res = await fetch(localApi, {
+		const res = await fetch(api, {
 			method: "POST",
 			body: JSON.stringify({
-				firstName: formInput.firstName,
-				lastName: formInput.lastName,
+				firstname: formInput.firstname,
+				lastname: formInput.lastname,
 				email: formInput.email,
-				studentID: formInput.studentID,
+				username: formInput.username,
 				password: formInput.password,
 			}),
 			headers: {
@@ -172,8 +173,8 @@ function SignUp() {
 							<hr />
 						</h1>
 						<div className="name-group sign-group-style ">
-							<div className="firstName sign-group-element">
-								<label className="signup-label" htmlFor="firstName">
+							<div className="firstname sign-group-element">
+								<label className="signup-label" htmlFor="firstname">
 									<p className="required-field-star">First Name</p>
 								</label>
 
@@ -182,16 +183,16 @@ function SignUp() {
 										handleUserInput(target.name, target.value);
 									}}
 									id="sign-up-fn-1"
-									value={formInput.firstName}
+									value={formInput.firstname}
 									className="form-control"
 									type="text"
-									placeholder="FirstName"
-									name="firstName"
+									placeholder="firstname"
+									name="firstname"
 								/>
-								<p className="error-message">{formError.firstName}</p>
+								<p className="error-message">{formError.firstname}</p>
 							</div>
-							<div className="lastName sign-group-element">
-								<label className="signup-label" htmlFor="LastName">
+							<div className="lastname sign-group-element">
+								<label className="signup-label" htmlFor="lastname">
 									<p className="required-field-star">Last Name</p>
 								</label>
 								<input
@@ -199,13 +200,13 @@ function SignUp() {
 										handleUserInput(target.name, target.value);
 									}}
 									id="sign-up-ln-1"
-									value={formInput.lastName}
+									value={formInput.lastname}
 									className="form-control"
 									type="text"
-									placeholder="LastName"
-									name="lastName"
+									placeholder="lastname"
+									name="lastname"
 								/>
-								<p className="error-message">{formError.lastName}</p>
+								<p className="error-message">{formError.lastname}</p>
 							</div>
 							<div className="topics sign-group-element">
 								<label className="topics-label" htmlFor="topicsLabel">
@@ -232,7 +233,7 @@ function SignUp() {
 							<p className="error-message">{formError.email}</p>
 						</div>
 						<div className="student-id sign-group-style sign-group-element">
-							<label className="signup-label" htmlFor="LastName">
+							<label className="signup-label" htmlFor="lastname">
 								<p className="required-field-star">Student ID #</p>
 							</label>
 							<input
@@ -242,10 +243,10 @@ function SignUp() {
 								className="form-control"
 								type="text"
 								placeholder="Student ID"
-								value={formInput.studentID}
-								name="studentID"
+								value={formInput.username}
+								name="username"
 							/>
-							<p className="error-message">{formError.studentID}</p>
+							<p className="error-message">{formError.username}</p>
 						</div>
 						<div className="pass-group sign-group-style">
 							<div className="password  sign-group-element">

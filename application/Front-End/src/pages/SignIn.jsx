@@ -9,11 +9,14 @@ function SignIn() {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 
+	const localApi = "http://localhost:8003/GetUser";
+	const api = "http://3.101.225.46:3000/GetUser";
+
 	const handleLogin = () => {
 		console.log("Attempting to log in with:", { email: username, password: password });
 
-		fetch("http://localhost:8003/getUser", {
-			method: "POST",
+		fetch(localApi, {
+			method: "PlocalAST",
 			headers: {
 				"Content-Type": "application/json"
 			},
