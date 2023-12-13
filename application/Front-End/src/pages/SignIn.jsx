@@ -1,59 +1,62 @@
-import React, { useState, Fragment } from 'react';
-import NavMenu from './NavMenu';
-import Footer from './Footer';
+import React, { useState, Fragment } from "react";
+import NavMenu from "./NavMenu";
+import Footer from "./Footer";
 
 // email: "akshargothi5678@gmail.com", // Test email
 // password: "Askhssk"    // Test password
 
 function SignIn() {
-	const [username, setUsername] = useState('');
-	const [password, setPassword] = useState('');
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 
 	const localApi = "http://localhost:8003/GetUser";
 	const api = "http://3.101.225.46:3000/GetUser";
 
 	const handleLogin = () => {
-		console.log("Attempting to log in with:", { email: username, password: password });
+		console.log("Attempting to log in with:", {
+			email: email,
+			password: password,
+		});
 
 		fetch(localApi, {
 			method: "PlocalAST",
 			headers: {
-				"Content-Type": "application/json"
+				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({
-				email: username,
-				password: password
-			})
+				email: email,
+				password: password,
+			}),
 		})
-			.then(response => {
+			.then((response) => {
 				if (!response.ok) {
 					throw new Error(`HTTP error! status: ${response.status}`);
 				}
 				return response.json();
 			})
-			.then(data => {
-				console.log('Response data:', data);
+			.then((data) => {
+				console.log("Response data:", data);
+
+				console.log(data);
 
 				// Check if the password from the response matches the entered password
-				if (data[0] && data[0].Password === password) {
-					console.log('Login successful');
+				// if (data[0] && data[0].Password === password) {
+				if (data && data.Password) {
+					console.log("Login successful");
 					// Handle successful login
 					// Save user data to localStorage
-					sessionStorage.setItem('user', JSON.stringify(data[0]));
-					window.location.href = '/dashboard';
-
-
+					sessionStorage.setItem("user", JSON.stringify(data));
+					window.location.href = "/dashboard";
 				} else {
-					console.log('Login failed: Incorrect password');
+					console.log("Login failed: Incorrect password");
 					// Handle login failure
 				}
 			})
-			.catch(error => {
-				console.error('Error during fetch operation:', error.message);
+			.catch((error) => {
+				console.error("Error during fetch operation:", error.message);
 				// Handle fetch errors
 			});
 	};
-
 
 	return (
 		<Fragment>
@@ -64,7 +67,13 @@ function SignIn() {
 					<div className="form-overlay"></div>
 				</div>
 				<div className="form-child signin-form login-form">
-					<form id="form-signup-1" onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
+					<form
+						id="form-signup-1"
+						onSubmit={(e) => {
+							e.preventDefault();
+							handleLogin();
+						}}
+					>
 						<h1 className="form-title">
 							<b>Sign In to your Account</b>
 							<hr />
@@ -80,8 +89,8 @@ function SignIn() {
 									type="text"
 									placeholder="UserName"
 									name="name"
-									value={username}
-									onChange={(e) => setUsername(e.target.value)}
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
 								/>
 							</div>
 						</div>
