@@ -19,7 +19,7 @@ function SignIn() {
 		});
 
 		fetch(localApi, {
-			method: "PlocalAST",
+			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
