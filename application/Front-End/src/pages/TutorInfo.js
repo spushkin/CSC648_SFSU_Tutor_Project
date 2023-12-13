@@ -26,8 +26,8 @@ const result = useLocation();
         const response = fetch(api, {
 			method: "POST",
 			body: JSON.stringify({
-				SenderId: JSON.parse(sessionStorage.getItem('user'))[0].id,
-                RecevierId: recieveID,
+				SenderId: recieveID,
+                RecevierId: JSON.parse(sessionStorage.getItem('user'))[0].id,
                 Text: sent,
 			}),
 			headers: {
