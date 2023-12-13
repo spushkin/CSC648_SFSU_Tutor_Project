@@ -11,8 +11,10 @@ const getTopic = require('../Services/GetTopic');
 const createTopic = require('../Services/CreateTopic');
 const createCategory = require('../Services/CreateCategory');
 const getCategory = require('../Services/GetCategory');
-const bycrypt = require('bcryptjs');
 
+const bycrypt = require('bcryptjs');
+const multer = require('multer');
+const upload = multer({ dest: '../../Public/TutorFiles' });
 // Define the exported function
 exports.getTutors = async (subject, searchText) => {
     try {
@@ -67,7 +69,7 @@ exports.getUser = async (email, password) => {
 
 
 // Define the exported function
-exports.createTutor = async (name, email, topicId, cv, description, photo, schedule) => {
+exports.createTutor = async (name, email, topicId, cv, description, photo, schedule="") => {
     try {
         // Retrieve all tutors from the database
         let user;
