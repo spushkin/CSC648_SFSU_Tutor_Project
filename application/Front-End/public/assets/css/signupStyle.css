@@ -174,3 +174,19 @@
 .success-message {
 	color: darkgreen;
 }
+
+/* .custom-file-upload {
+	border: 1px solid #ccc;
+	display: inline-block;
+	padding: 1rem;
+	cursor: pointer;
+	background-color: rgb(250, 245, 245);
+}
+
+.custom-file-upload:hover {
+	background-color: lightgoldenrodyellow;
+}
+
+/* input[type="file"] {
+	display: none;
+} */
