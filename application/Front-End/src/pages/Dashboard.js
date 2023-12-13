@@ -3,6 +3,9 @@ import './Dashboard.css';
 import NavMenu from './NavMenu';
 import placeholderImage from '../images/sillouette.jpg';
 import placeholderMedia from '../images/sfLibrary.png';
+import PostCardTemplate from './PostCardTemplate';
+import PostWindow from './PostWindow';
+
 
 function Dashboard() {
     // State for the active tab
@@ -57,6 +60,12 @@ function Dashboard() {
         fetchData();
     }, []);
 
+    let isTutor = false
+
+    if (isTutor) {
+        isTutor = true;
+    }
+
     return (
         <div>
             <NavMenu />
@@ -90,75 +99,33 @@ function Dashboard() {
                             <img src={placeholderImage} alt="Profile" className="profile-image" />
                             <div className="profile-info">
                                 <h3>Name:</h3>
-                                <p>Placeholder for the name</p>
-                                <h3>Title:</h3>
-                                <p>Placeholder for the title</p>
-                                <h3>Topics:</h3>
-                                <p>Placeholder for topics</p>
-                                <h3>Description:</h3>
-                                <p>Placeholder for a longer description...</p>
+                                <p></p>
+                                {isTutor ? (
+                                    <>
+                                    <h3>Title:</h3>
+                                    <p>Placeholder for the title</p>
+                                    <h3>Topics:</h3>
+                                    <p>Placeholder for topics</p>
+                                    <h3>Description:</h3>
+                                    <p>Placeholder for a longer description...</p>
+                                    </>
+                                ) : (<></>)}
                             </div>
+                            {isTutor ? (
+                                    <>
                             <button className="edit-button" onClick={display}>Edit Description</button>
                             <div className="post-container">
                                 <h3>Posts:</h3>
                                 <button className="post-button">Create post</button>
 
-                                <div className="createpost-window">
-                                    <h3>Enter post details:</h3>
-                                    <div className="text-box">
-                                        <textarea placeholder="Limit to 500 Characters"></textarea>
-                                    </div>
-                                    <button className="post-button">Submit request</button>
-                                </div>
+                                {/* <PostWindow /> */}
 
                                 <div className="post-title">
-                                    <div className="posts">
-                                        <p className="center"><b>Name of User</b></p>
-                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
+                                    
 
-                                    </div>
-                                    <div className="posts">
-                                    <p className="center"><b>Name of User</b></p>
-                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
-
-                                    </div>
-                                    <div className="posts">
-                                    <p className="center"><b>Name of User</b></p>
-                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
-
-                                    </div>
-                                    <div className="posts">
-                                    <p className="center"><b>Name of User</b></p>
-                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
-
-                                    </div>
-                                    <div className="posts">
-                                    <p className="center"><b>Name of User</b></p>
-                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
-
-                                    </div>
-                                    <div className="posts">
-                                    <p className="center"><b>Name of User</b></p>
-                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
-
-                                    </div>
-                                    <div className="posts">
-                                    <p className="center"><b>Name of User</b></p>
-                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
-
-                                    </div>
-                                    <div className="posts">
-                                    <p className="center"><b>Name of User</b></p>
-                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
-
-                                    </div>
-                                    <div className="posts">
-                                    <p className="center"><b>Name of User</b></p>
-                                        <p className="center"><br/>Here will go a small description of the users post which will detail any posts they have made</p>
-
-                                    </div>
                                 </div>
                             </div>
+                            </>) : (<></>)}
                         </div>
                     )}
                     {activeTab === 'media' && (
@@ -180,14 +147,15 @@ function Dashboard() {
                         <div className="messages-tab">
                             <h2 className="messages-title">Messages</h2>
                             {chatMessages.map(chat => (
-                                <div key={chat.id} className="chat-item">
-                                    <img src={placeholderImage} className="chat-image" />
-                                    <div className="chat-info">
-                                        <div className="chat-name">{chat.SenderId}</div>
-                                        <div className="chat-message">{chat}</div>
-                                    </div>
-                                    <div className="chat-time">{chat.createdtime}</div>
-                                </div>
+                                // <div key={chat.id} className="chat-item">
+                                //     <img src={placeholderImage} className="chat-image" />
+                                //     <div className="chat-info">
+                                //         <div className="chat-name">{chat.SenderId}</div>
+                                //         <div className="chat-message">{chat.text}</div>
+                                //     </div>
+                                //     <div className="chat-time">{chat.createdtime}</div>
+                                // </div>
+                                <div>{chat}</div>
                             ))}
                             
                         </div>
