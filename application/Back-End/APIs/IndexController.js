@@ -18,16 +18,16 @@ exports.getTutors = async (subject, searchText) => {
     try {
         // Retrieve all tutors from the database
         let tutors;
-    
+
         tutors = await searchTutors(subject.toLowerCase(), searchText.toLowerCase());
-        
+
 
         // Send the tutors as a response
         return tutors;
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
-      return error;
+        return error;
     }
 };
 
@@ -43,27 +43,28 @@ exports.createUser = async (firstname, lastname, username, email, password) => {
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
-      return error;
+        return error;
     }
 };
 
 // Define the exported function
 exports.getUser = async (email, password) => {
     try {
-        // Retrieve all tutors from the database
-        let user;
-        user = await getUser(email);
-        if(bycrypt.compareSync(password, user[0].Password)){
+        // Retrieve user from the database
+        let user = await getUser(email);
+
+        // Compare plain-text passwords
+        if (user[0] && user[0].Password === password) {
             return user;
-        }else{
+        } else {
             return false;
         }
     } catch (error) {
-        // Handle any errors that occur
         console.error(error);
-      return error;
+        return error;
     }
 };
+
 
 
 // Define the exported function
@@ -76,7 +77,7 @@ exports.createTutor = async (name, email, topicId, cv, description, photo, sched
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
-      return error;
+        return error;
     }
 };
 
@@ -92,7 +93,7 @@ exports.getTutor = async (id) => {
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
-      return error;
+        return error;
     }
 };
 
@@ -106,7 +107,7 @@ exports.getTutorByEmail = async (email) => {
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
-      return error;
+        return error;
     }
 };
 
@@ -122,7 +123,7 @@ exports.createMessage = async (SenderId, RecevierId, Text) => {
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
-      return error;
+        return error;
     }
 };
 // Define the exported function
@@ -136,7 +137,7 @@ exports.getMessage = async (id) => {
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
-      return error;
+        return error;
     }
 };
 // Define the exported function
@@ -150,7 +151,7 @@ exports.getTopic = async () => {
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
-      return error;
+        return error;
     }
 };
 exports.createTopic = async (Name, CategoryID, Description) => {
@@ -163,7 +164,7 @@ exports.createTopic = async (Name, CategoryID, Description) => {
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
-      return error;
+        return error;
     }
 };
 exports.createCategory = async (Name, Description) => {
@@ -176,7 +177,7 @@ exports.createCategory = async (Name, Description) => {
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
-      return error;
+        return error;
     }
 };
 exports.getCategory = async () => {
@@ -189,6 +190,6 @@ exports.getCategory = async () => {
     } catch (error) {
         // Handle any errors that occur
         console.error(error);
-      return error;
+        return error;
     }
 };

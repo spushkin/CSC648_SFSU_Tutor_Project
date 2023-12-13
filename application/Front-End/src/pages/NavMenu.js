@@ -9,16 +9,15 @@ function NavMenu() {
 	const user = JSON.parse(sessionStorage.getItem('user'));
 	let isLoggedIn = false
 
-		if(user){
-			isLoggedIn = true;
-		}
-
+	if (user) {
+		isLoggedIn = true;
+	}
 	// Function for logout button 
 	const logout = () => {
-		console.log("does User before logout:\n"+sessionStorage.getItem('user'))
+		console.log("does User before logout:\n" + sessionStorage.getItem('user'))
 		console.log("logout");
 		sessionStorage.removeItem('user');
-		console.log("does User exist after logout:\n"+sessionStorage.getItem('user'))
+		console.log("does User exist after logout:\n" + sessionStorage.getItem('user'))
 		window.location.replace("http://localhost:3000/");
 		// Perform any additional logout operations like redirecting to login page
 	}
@@ -54,29 +53,29 @@ function NavMenu() {
 							<label htmlFor="toggler">
 								<img src={require("../images/sillouette.jpg")} className="iconStyle" alt="" />
 							</label>
-								
-								{isLoggedIn ? (
-									<div className="dropdown">
-										<a className="mid" href="/dashboard">
-											MyDash
-										</a>
-										<a className="mid" onClick={logout}>
-											Logout
-										</a>
-									</div>
-								) : (
-									<div className="dropdown">
-										<a className="dropLink" href="/studentsignup">
-											Sign Up
-										</a>
-										<a className="mid" href="/signin">
-											Sign In
-										</a>
-									</div>
-								)}
-								
-							
-							</div>		
+
+							{isLoggedIn ? (
+								<div className="dropdown">
+									<a className="mid" href="/dashboard">
+										MyDash
+									</a>
+									<a className="mid" onClick={logout}>
+										Logout
+									</a>
+								</div>
+							) : (
+								<div className="dropdown">
+									<a className="dropLink" href="/studentsignup">
+										Sign Up
+									</a>
+									<a className="mid" href="/signin">
+										Sign In
+									</a>
+								</div>
+							)}
+
+
+						</div>
 
 					</li>
 				</ul>
