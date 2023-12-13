@@ -50,16 +50,16 @@ exports.createUser = async (firstname, lastname, username, email, password) => {
 // Define the exported function
 exports.getUser = async (email, password) => {
     try {
-        // Retrieve user from the database
-        let user = await getUser(email);
-
-        // Compare plain-text passwords
-        if (user[0] && user[0].Password === password) {
+        // Retrieve all tutors from the database
+        let user;
+        user = await getUser(email);
+        if (bycrypt.compareSync(password, user[0].Password)) {
             return user;
         } else {
             return false;
         }
     } catch (error) {
+        // Handle any errors that occur
         console.error(error);
         return error;
     }
