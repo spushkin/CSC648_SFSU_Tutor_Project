@@ -55,7 +55,7 @@ function Dashboard() {
 
     const [options, setOptions] = useState([]);
   	const [selectedOption, setSelectedOption] = useState('');
-    const messageApi = "http://3.101.225.46:8003/getMessage";
+    const messageApi = "http://localhost:8003/getMessage";
 
     useEffect(() => {
 		// Fetch dynamic data (replace this with your data-fetching logic)
@@ -207,12 +207,12 @@ function Dashboard() {
                             <h2 className="messages-title">Messages</h2>
                             {chatMessages.map(chat => (
                                 <div key={chat.id} className="chat-item">
-                                    <img src={chat.image} alt={chat.name} className="chat-image" />
+                                    <img src={placeholderImage} className="chat-image" />
                                     <div className="chat-info">
                                         <div className="chat-name">{chat.name}</div>
-                                        <div className="chat-message">{chat.message}</div>
+                                        <div className="chat-message">{chat.text}</div>
                                     </div>
-                                    <div className="chat-time">{chat.time}</div>
+                                    <div className="chat-time">{chat.createdtime}</div>
                                 </div>
                             ))}
                         </div>
