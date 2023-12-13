@@ -3,15 +3,41 @@
  * Description: Dropdown menu for Topics.
  */
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Dropdown = () => {
 	// state to track whether the dropdown is open
 	const [isOpen, setIsOpen] = useState(false);
 	// state to store the selected option
-	const [selectedOption, setSelectedOption] = useState(null);
+	const [options, setOptions] = useState([]);
+  	const [selectedOption, setSelectedOption] = useState('');
 	// array of topic options
-	const options = ["Physics", "Math", "CS", "Chemistry"];
+
+	const topicApi = "http://3.101.225.46:8003/getTopic";
+
+	useEffect(() => {
+		// Fetch dynamic data (replace this with your data-fetching logic)
+		const fetchData = async () => {
+		  try {
+			const response = await fetch(topicApi, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				}});
+			const data = await response.json();
+			console.log(data);
+			setOptions(data);
+		  } catch (error) {
+			console.error('Error fetching options:', error);
+		  }
+		};
+	
+		fetchData();
+	  }, []);
+
+	  const handleChange = (event) => {
+		setSelectedOption(event.target.value);
+	  };
 
 	// event handler for toggling the dropdown
 	const handleToggle = () => {
@@ -28,26 +54,23 @@ const Dropdown = () => {
 
 	// JSX structure for the Dropdown component
 	return (
+		
 		<div className="dropdown-topics">
 			{/* Button to toggle the dropdown */}
-			<button type="button" className="dropdown-btn" onClick={handleToggle}>
-				{selectedOption ? selectedOption : "Click to select Topic"}
-			</button>
 
 			{/* Dropdown content */}
-			{isOpen && (
-				<div className="dropdown-content">
-					{options.map((option) => (
-						<div
-							className="topic-dropdown"
-							key={option}
-							onClick={() => handleSelect(option)}
-						>
-							{option}
-						</div>
-					))}
-				</div>
-			)}
+		
+			<select value={selectedOption} onChange={handleChange}>
+				<option value="" disabled>
+					Select an option
+				</option>
+				{options.map((option) => (
+					<option key={option.Name} value={option.Name}>
+						{option.Name}
+					</option>
+				))}
+			</select>
+			
 		</div>
 	);
 };
