@@ -10,7 +10,7 @@ function SignIn() {
 	const [password, setPassword] = useState("");
 
 	const localApi = "http://localhost:8003/GetUser";
-	const api = "http://3.101.225.46:3000/GetUser";
+	const api = "http://3.101.225.46:8003/GetUser";
 
 	const handleLogin = () => {
 		console.log("Attempting to log in with:", {
@@ -18,7 +18,7 @@ function SignIn() {
 			password: password,
 		});
 
-		fetch(localApi, {
+		fetch(api, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -41,7 +41,8 @@ function SignIn() {
 
 				// Check if the password from the response matches the entered password
 				// if (data[0] && data[0].Password === password) {
-				if (data && data.Password) {
+
+				if (data) {
 					console.log("Login successful");
 					// Handle successful login
 					// Save user data to localStorage

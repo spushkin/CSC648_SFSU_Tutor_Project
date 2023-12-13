@@ -12,6 +12,7 @@ function NavMenu() {
 	if (user) {
 		isLoggedIn = true;
 	}
+	
 	// Function for logout button 
 	const logout = () => {
 		console.log("does User before logout:\n" + sessionStorage.getItem('user'))
