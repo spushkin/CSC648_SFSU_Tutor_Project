@@ -6,12 +6,12 @@ import Footer from "./Footer";
 // password: "Askhssk"    // Test password
 
 function SignIn() {
-	const [username, setUsername] = useState("");
+	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
 	const handleLogin = () => {
 		console.log("Attempting to log in with:", {
-			email: username,
+			email: email,
 			password: password,
 		});
 
@@ -21,7 +21,7 @@ function SignIn() {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({
-				username: username,
+				email: email,
 				password: password,
 			}),
 		})
@@ -34,12 +34,15 @@ function SignIn() {
 			.then((data) => {
 				console.log("Response data:", data);
 
+				console.log(data);
+
 				// Check if the password from the response matches the entered password
-				if (data[0] && data[0].Password === password) {
+				// if (data[0] && data[0].Password === password) {
+				if (data && data.Password) {
 					console.log("Login successful");
 					// Handle successful login
 					// Save user data to localStorage
-					sessionStorage.setItem("user", JSON.stringify(data[0]));
+					sessionStorage.setItem("user", JSON.stringify(data));
 					window.location.href = "/dashboard";
 				} else {
 					console.log("Login failed: Incorrect password");
@@ -83,8 +86,8 @@ function SignIn() {
 									type="text"
 									placeholder="UserName"
 									name="name"
-									value={username}
-									onChange={(e) => setUsername(e.target.value)}
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
 								/>
 							</div>
 						</div>

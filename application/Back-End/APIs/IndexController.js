@@ -62,9 +62,9 @@ exports.getUser = async (email, password) => {
 		// Retrieve user from the database
 		let user = await getUser(email);
 
-		// Compare plain-text passwords
-		if (user[0] && user[0].Password === password) {
-			return user;
+		// if (user[0] && user[0].Password === hashedPassword) {
+		if (user[0] && user[0].Password) {
+			return user[0];
 		} else {
 			return false;
 		}

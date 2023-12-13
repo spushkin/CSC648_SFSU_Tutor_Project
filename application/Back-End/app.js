@@ -35,6 +35,7 @@ app.post("/createUser", bodyParser.json(), async (req, res) => {
 });
 app.post("/getUser", bodyParser.json(), async (req, res) => {
 	const { email, password } = req.body;
+
 	const results = await indexController.getUser(email, password);
 	res.send(results);
 });
