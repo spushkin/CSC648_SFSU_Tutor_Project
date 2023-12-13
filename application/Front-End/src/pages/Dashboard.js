@@ -48,7 +48,7 @@ function Dashboard() {
     ];
 
     const display = () => {
-        console.log(sessionStorage.getItem);
+        console.log(sessionStorage);
     }
 
     const getActiveClass = (tabName) => activeTab === tabName ? 'active' : '';
@@ -101,7 +101,9 @@ function Dashboard() {
 
                                 <div className="createpost-window">
                                     <h3>Enter post details:</h3>
-                                    <textarea placeholder="Limit to 500 Characters"></textarea>
+                                    <div className="text-box">
+                                        <textarea placeholder="Limit to 500 Characters"></textarea>
+                                    </div>
                                     <button className="post-button">Submit request</button>
                                 </div>
 
