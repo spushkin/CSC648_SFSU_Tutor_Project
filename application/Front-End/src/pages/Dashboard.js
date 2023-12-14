@@ -23,9 +23,9 @@ function Dashboard() {
 
     const info = JSON.parse(sessionStorage.getItem('user'));
 
-    const first = info[0].Firstname;
-    const last = info[0].Lastname;
-    const email = info[0].Email;
+    const first = info[0].firstname;
+    const last = info[0].lastname;
+    const email = info[0].email;
 
     const fullname = first + " " + last;
 
