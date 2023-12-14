@@ -25,9 +25,9 @@ function Dashboard() {
 
     console.log(info);
 
-    const first = info.firstname;
-    const last = info.lastname;
-    const email = info.email;
+    const first = info.Firstname;
+    const last = info.Lastname;
+    const email = info.Email;
 
     const fullname = first + " " + last;
 
@@ -86,7 +86,6 @@ function Dashboard() {
         };
         
 		// Fetch dynamic data (replace this with your data-fetching logic)
-        console.log("herer goes a error2");
 		const fetchMessage = async () => {
 		  try {
 			const response = await fetch(messageApi, {
