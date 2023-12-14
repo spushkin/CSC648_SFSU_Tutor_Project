@@ -25,7 +25,7 @@ function NavMenu() {
 	return (
 		<Fragment>
 			<nav>
-				<Link to="/" className="title"><i>Cheep</i></Link>
+				<Link to="/" className="title"><i>TutMadeEz</i></Link>
 				<div className="menu"
 					onClick={() => {
 						setMenuOpen(!menuOpen)
